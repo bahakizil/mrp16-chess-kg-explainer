@@ -1,5 +1,7 @@
 # Chess knowledge graph + LLM-guided MCTS for move explanations
 
+**Live demo (Vercel): [chess-kg-demo.vercel.app](https://chess-kg-demo.vercel.app)** · [How it works](https://chess-kg-demo.vercel.app/pipeline.html) · [Lichess puzzle 2Tl6d](https://chess-kg-demo.vercel.app/puzzle-2Tl6d.html)
+
 Proof of concept for **Project 16, Master Research Project AI (Maastricht University, 2026–27)**:
 *LLM-Guided Tree Search for Knowledge Discovery and Explanations in Knowledge Graphs*
 (supervisors: Dr. Remzi Celebi and Rishabh Jakhar).
@@ -10,7 +12,7 @@ To decide *which* verified facts make a good explanation, the LLM guides a Monte
 The method follows the supervisors' TESSERA paper (LLM-guided MCTS over a knowledge graph, Jakhar, Dumontier & Celebi, 2026),
 moved from drug–disease mechanisms to chess.
 
-**Live demo:** <https://chess-kg-demo.vercel.app>
+**Live demo (hosted on Vercel):** <https://chess-kg-demo.vercel.app>
 - [Example 1 – a constructed knight fork](https://chess-kg-demo.vercel.app/)
 - [Example 2 – Lichess puzzle 2Tl6d, rated 2496](https://chess-kg-demo.vercel.app/puzzle-2Tl6d.html)
 - [How it works, step by step](https://chess-kg-demo.vercel.app/pipeline.html), with every LLM prompt and answer of one run
@@ -148,4 +150,10 @@ A run with 100 simulations makes about 120–170 LLM calls (about 40–50k input
 
 ## Authors
 
-Group 16: Baha Kizil, Péter Zsula, Nguyen Thai Binh. This prototype was built by Baha Kizil.
+Group 16, Master Research Project AI, Maastricht University:
+
+- Baha Kizil
+- Péter Zsula
+- Nguyen Thai Binh
+
+Supervisors: Dr. Remzi Celebi and Rishabh Jakhar.
