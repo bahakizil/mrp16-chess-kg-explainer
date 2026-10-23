@@ -146,12 +146,6 @@ A run with 100 simulations makes about 120–170 LLM calls (about 40–50k input
 - Lichess open database, puzzles (CC0): <https://database.lichess.org/#puzzles>
 - Stockfish: <https://stockfishchess.org>; python-chess: <https://python-chess.readthedocs.io>
 
-## Use of generative AI
-
-The course instructor approved the use of generative AI for this project (21 October 2026).
-The code and this README were written with the help of Claude (Anthropic) and reviewed by Baha Kizil.
-In the method itself, GPT-4.1-mini is a research component, not writing assistance.
-
 ## Authors
 
 Group 16: Baha Kizil, Péter Zsula, Nguyen Thai Binh. This prototype was built by Baha Kizil.
