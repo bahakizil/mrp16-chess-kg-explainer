@@ -1,0 +1,14 @@
+<b>Result on this puzzle: MCTS was not needed.</b>
+<ul style="margin:6px 0 0 18px; padding:0">
+  <li>All three explainers that saw verified information (1, 2 and 3) named the correct move, Rxg7+. Each found the same single theme, <i>sacrifice</i>.</li>
+  <li>The search cost <b>46 LLM calls (about 15k tokens)</b>. The no-search explainers needed <b>1 call (0.4–1.2k tokens)</b>.</li>
+  <li>The whole knowledge graph (52 facts, about 640 tokens) fits easily into one prompt, so there was nothing for the search to select from.</li>
+  <li>The board-only LLM chose a wrong move (Bxf6).</li>
+</ul>
+<p style="margin:8px 0 0"><b>What limited every explainer was the knowledge, not the search.</b>
+None of them found <i>pin</i> or <i>attraction</i>: the graph does not contain those concepts.
+Also, the engine's main line (Rxg7+ Kf8) differs from the Lichess solution (Rxg7+ Kxg7). This supports our supervisors' advice:
+first build a richer, ontology-based knowledge graph, and use search only once that graph is too large for one prompt.</p>
+<p class="muted" style="margin:8px 0 0">Caveats: one puzzle; the theme scores are keyword matches, not a judgement of quality.
+For example, explainer 1 says "after Black recaptures", but in the engine line the king steps aside.
+The MCTS writer called Rxg7+ a "sacrifice", which was not among the facts it was given.</p>

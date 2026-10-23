@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is Search Needed</title>
+<style>
+  :root { --bg:#f4f6f5; --panel:#fff; --ink:#18252d; --muted:#5b6b73; --line:#d9e2de; --head:#13212b; --headink:#eef3f1;
+          --ok:#15803d; --bad:#b91c1c; --code:#f6f8f7; --accent:#0e7c70; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+          --bg:#10171c; --panel:#18232a; --ink:#e3ebe8; --muted:#9db0aa; --line:#2b3a42; --head:#0a1014; --code:#121b21; --ok:#4ade80; --bad:#f87171; } }
+  :root[data-theme="dark"] { --bg:#10171c; --panel:#18232a; --ink:#e3ebe8; --muted:#9db0aa; --line:#2b3a42; --head:#0a1014; --code:#121b21; --ok:#4ade80; --bad:#f87171; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+  header { background:var(--head); color:var(--headink); padding:16px; }
+  header h1 { margin:0; font-size:22px; } header p { margin:4px 0 0; color:#a9c0ba; font-size:14px; }
+  nav a { color:#9fe0d4; font-size:13px; margin-right:12px; }
+  main { max-width:1150px; margin:0 auto; padding:16px; }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; margin:14px 0; }
+  h2 { margin:0 0 8px; font-size:19px; } h3 { margin:0 0 6px; font-size:15px; }
+  .muted { color:var(--muted); font-size:13px; }
+  .row { display:flex; gap:16px; flex-wrap:wrap; } .row > * { flex:1 1 300px; min-width:0; }
+  .board svg { max-width:100%; height:auto; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; }
+  .card { border:1px solid var(--line); border-radius:10px; padding:12px; background:var(--code); font-size:13px; display:flex; flex-direction:column; gap:8px; }
+  .card.ours { border:2px solid var(--accent); }
+  .tag { display:inline-block; font-size:12px; font-weight:600; padding:2px 8px; border-radius:10px; background:var(--line); }
+  .ok { color:var(--ok); font-weight:600; } .bad { color:var(--bad); font-weight:600; }
+  table { border-collapse:collapse; width:100%; font-size:13px; } th,td { text-align:left; padding:6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  details { font-size:12px; } summary { cursor:pointer; font-weight:600; }
+  pre { white-space:pre-wrap; word-break:break-word; font-family:ui-monospace,Menlo,monospace; font-size:11px; margin:6px 0 0; }
+  .answer { border-left:4px solid var(--accent); padding:8px 12px; background:var(--code); border-radius:6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Test 3: do we need MCTS to explain a puzzle?</h1>
+  <p>The same hard puzzle and the same LLM, explained four ways: with and without search.</p>
+  <nav><a href="index.html">Example 1</a><a href="puzzle-2Tl6d.html">Example 2</a><a href="pipeline.html">How it works</a><a href="compare.html">Test 3: is search needed?</a></nav>
+</header>
+<main>
+<section>
+  <h2>The question</h2>
+  <p>Our supervisor asked: <i>"Why do you need search? I can take the top 5 engine lines, put them in one context window and ask the LLM."</i>
+  We test exactly that. The key comparison is <b>2 vs 3</b>: both see the same verified facts; only 3 lets MCTS choose which facts to use.</p>
+  <div class="answer" id="verdict"></div>
+</section>
+
+<section>
+  <h2>The puzzle</h2>
+  <div class="row"><div class="board" id="board"></div><div id="pz"></div></div>
+</section>
+
+<section>
+  <h2>Four explanations</h2>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section>
+  <h2>Scores</h2>
+  <p class="muted">All scores are automatic. <b>Correct move</b>: the solution move appears in the text. <b>Themes</b>: Lichess tactical themes named in the text.
+  <b>Unverified moves</b>: moves written in the text that are neither legal in the position nor in any engine line (likely invented). Conditions 1 and 2 were run several times; each run is shown.</p>
+  <div id="table"></div>
+</section>
+</main>
+<script>
+/*DATA*/
+const esc = s => String(s ?? "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+document.getElementById("verdict").innerHTML = D.verdict || "";
+document.getElementById("board").innerHTML = D.board_svg;
+const P = D.puzzle;
+document.getElementById("pz").innerHTML = `<table><tr><th>Puzzle</th><td><a href="https://lichess.org/training/${P.id}" target="_blank">${P.id}</a>, rated <b>${P.rating}</b></td></tr>
+<tr><th>To move</th><td>${D.fen.split(" ")[1]==="w"?"White":"Black"}</td></tr><tr><th>Solution</th><td><b>${P.solution.join(" ")}</b></td></tr>
+<tr><th>Lichess themes</th><td>${P.themes.join(", ")}</td></tr><tr><th>Model</th><td>${D.model}, temperature 0</td></tr>
+<tr><th>Knowledge graph</th><td>${D.graph.nodes} nodes, ${D.graph.edges} verified facts (≈${D.graph.facts_tokens_estimate} tokens as text)</td></tr></table>`;
+const order = ["0","1","2","3"];
+const fmt = s => `${s.correct_move?'<span class="ok">✅ correct move</span>':'<span class="bad">❌ no correct move</span>'}<br>
+  Themes: ${s.themes_hit.length?'<span class="ok">'+s.themes_hit.join(", ")+'</span>':'<span class="bad">none</span>'} <span class="muted">of ${s.themes_total.join(", ")}</span><br>
+  Unverified moves: ${s.unverified_moves.length?'<span class="bad">'+s.unverified_moves.join(", ")+'</span>':'<span class="ok">none</span>'}`;
+document.getElementById("cards").innerHTML = order.map(k=>{ const c = D.conditions[k], r = c.runs[0];
+  return `<div class="card ${k==='3'?'ours':''}"><div><span class="tag">${k}</span> <b>${esc(c.name)}</b></div>
+   <div class="muted">LLM saw: ${esc(c.saw)}. ${c.calls_per_run} LLM call${c.calls_per_run>1?'s':''}${k==='3'?`, ${c.accepted} accepted chains`:''}.</div>
+   <div>${esc(r.text)}</div><div>${fmt(r.score)}</div>
+   ${c.prompt?`<details><summary>Prompt</summary><pre>${esc(c.prompt)}</pre></details>`:''}</div>`; }).join("");
+let rows = "";
+order.forEach(k=>{ const c = D.conditions[k]; c.runs.forEach((r,i)=>{ const s = r.score;
+  rows += `<tr><td>${k}. ${esc(c.name)}${c.runs.length>1?` (run ${i+1})`:''}</td><td class="${s.correct_move?'ok':'bad'}">${s.correct_move?'✅':'❌'}</td>
+  <td>${s.themes_hit.length} / ${s.themes_total.length}${s.themes_hit.length?' ('+s.themes_hit.join(", ")+')':''}</td>
+  <td class="${s.unverified_moves.length?'bad':'ok'}">${s.unverified_moves.length?s.unverified_moves.join(", "):'0'}</td>
+  <td>${c.calls_per_run}</td><td>${(r.in||0).toLocaleString()} / ${(r.out||0).toLocaleString()}</td><td>${s.words}</td></tr>`; }); });
+document.getElementById("table").innerHTML = `<table><tr><th>Explainer</th><th>Correct move</th><th>Themes named</th><th>Unverified moves</th><th>LLM calls</th><th>Tokens in / out</th><th>Words</th></tr>${rows}</table>`;
+</script>
+</body>
+</html>

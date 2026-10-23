@@ -1,0 +1,3157 @@
+{
+ "fen": "r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17",
+ "mode": "llm",
+ "model": "openai/gpt-4.1-mini",
+ "T": 100,
+ "puzzle": {
+  "id": "0s9eK",
+  "fen": "r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17",
+  "rating": 2498,
+  "themes": [
+   "attraction",
+   "crushing",
+   "kingsideAttack",
+   "long",
+   "middlegame",
+   "pin",
+   "sacrifice"
+  ],
+  "solution": [
+   "Rxg7+",
+   "Kxg7",
+   "Qg4+",
+   "Kf8",
+   "Qg5"
+  ],
+  "plays": 3475,
+  "url": "https://lichess.org/ZdyjGrnQ/black#32"
+ },
+ "nodes": {
+  "position": {
+   "kind": "position",
+   "label": "Position (White to move)"
+  },
+  "goal": {
+   "kind": "goal",
+   "label": "Goal: decisive advantage (\u2265 +3 or forced mate)"
+  },
+  "line:Rxg7+|0|Rxg7+": {
+   "kind": "move",
+   "label": "Rxg7+"
+  },
+  "piece:BP@g7": {
+   "kind": "piece",
+   "label": "Black pawn g7"
+  },
+  "motif:check|Rxg7+|0": {
+   "kind": "motif",
+   "label": "Check on the Black king (legal answers: Kh8, Kf8, Kxg7)"
+  },
+  "piece:BK@g8": {
+   "kind": "piece",
+   "label": "Black king g8"
+  },
+  "line:Rxg7+|1|Kf8": {
+   "kind": "reply",
+   "label": "Kf8 (reply)"
+  },
+  "line:Rxg7+|2|Rg3": {
+   "kind": "move",
+   "label": "Rg3 (then)"
+  },
+  "line:Rxg7+|3|cxb2": {
+   "kind": "reply",
+   "label": "cxb2 (reply)"
+  },
+  "piece:WP@b2": {
+   "kind": "piece",
+   "label": "White pawn b2"
+  },
+  "line:Rxg7+|4|Rb1": {
+   "kind": "move",
+   "label": "Rb1 (then)"
+  },
+  "line:Rxg7+|5|Bd6": {
+   "kind": "reply",
+   "label": "Bd6 (reply)"
+  },
+  "outcome:Rxg7+": {
+   "kind": "outcome",
+   "label": "After Rxg7+: +6.22 (Stockfish d18)",
+   "cp": 622
+  },
+  "line:bxc3|0|bxc3": {
+   "kind": "move",
+   "label": "bxc3"
+  },
+  "piece:BP@c3": {
+   "kind": "piece",
+   "label": "Black pawn c3"
+  },
+  "line:bxc3|1|g6": {
+   "kind": "reply",
+   "label": "g6 (reply)"
+  },
+  "line:bxc3|2|h4": {
+   "kind": "move",
+   "label": "h4 (then)"
+  },
+  "line:bxc3|3|Nd7": {
+   "kind": "reply",
+   "label": "Nd7 (reply)"
+  },
+  "line:bxc3|4|h5": {
+   "kind": "move",
+   "label": "h5 (then)"
+  },
+  "motif:pinshield|bxc3|4|g6": {
+   "kind": "motif",
+   "label": "Pin: Black pawn g6 is pinned to its king, so it cannot take on h5"
+  },
+  "piece:BP@g6": {
+   "kind": "piece",
+   "label": "Black pawn g6"
+  },
+  "piece:WP@h5": {
+   "kind": "piece",
+   "label": "White pawn h5"
+  },
+  "line:bxc3|5|Nxe5": {
+   "kind": "reply",
+   "label": "Nxe5 (reply)"
+  },
+  "piece:WB@e5": {
+   "kind": "piece",
+   "label": "White bishop e5"
+  },
+  "outcome:bxc3": {
+   "kind": "outcome",
+   "label": "After bxc3: +0.45 (Stockfish d18)",
+   "cp": 45
+  },
+  "line:Rb1|0|Rb1": {
+   "kind": "move",
+   "label": "Rb1"
+  },
+  "line:Rb1|1|g6": {
+   "kind": "reply",
+   "label": "g6 (reply)"
+  },
+  "line:Rb1|2|bxc3": {
+   "kind": "move",
+   "label": "bxc3 (then)"
+  },
+  "line:Rb1|3|Bd6": {
+   "kind": "reply",
+   "label": "Bd6 (reply)"
+  },
+  "line:Rb1|4|Qe2": {
+   "kind": "move",
+   "label": "Qe2 (then)"
+  },
+  "line:Rb1|5|Bxe5": {
+   "kind": "reply",
+   "label": "Bxe5 (reply)"
+  },
+  "outcome:Rb1": {
+   "kind": "outcome",
+   "label": "After Rb1: +0.08 (Stockfish d18)",
+   "cp": 8
+  },
+  "line:h4|0|h4": {
+   "kind": "move",
+   "label": "h4"
+  },
+  "line:h4|1|cxb2": {
+   "kind": "reply",
+   "label": "cxb2 (reply)"
+  },
+  "line:h4|2|Rb1": {
+   "kind": "move",
+   "label": "Rb1 (then)"
+  },
+  "line:h4|3|Bd6": {
+   "kind": "reply",
+   "label": "Bd6 (reply)"
+  },
+  "line:h4|4|Rxb2": {
+   "kind": "move",
+   "label": "Rxb2 (then)"
+  },
+  "piece:BP@b2": {
+   "kind": "piece",
+   "label": "Black pawn b2"
+  },
+  "line:h4|5|Rb8": {
+   "kind": "reply",
+   "label": "Rb8 (reply)"
+  },
+  "outcome:h4": {
+   "kind": "outcome",
+   "label": "After h4: +0.07 (Stockfish d18)",
+   "cp": 7
+  },
+  "line:Qc2|0|Qc2": {
+   "kind": "move",
+   "label": "Qc2"
+  },
+  "line:Qc2|1|cxb2": {
+   "kind": "reply",
+   "label": "cxb2 (reply)"
+  },
+  "line:Qc2|2|Rb1": {
+   "kind": "move",
+   "label": "Rb1 (then)"
+  },
+  "line:Qc2|3|Rc8": {
+   "kind": "reply",
+   "label": "Rc8 (reply)"
+  },
+  "line:Qc2|4|Qxb2": {
+   "kind": "move",
+   "label": "Qxb2 (then)"
+  },
+  "line:Qc2|5|Rc6": {
+   "kind": "reply",
+   "label": "Rc6 (reply)"
+  },
+  "outcome:Qc2": {
+   "kind": "outcome",
+   "label": "After Qc2: -0.03 (Stockfish d18)",
+   "cp": -3
+  }
+ },
+ "edges": [
+  [
+   "position",
+   "line:Rxg7+|0|Rxg7+",
+   "candidate"
+  ],
+  [
+   "position",
+   "line:bxc3|0|bxc3",
+   "candidate"
+  ],
+  [
+   "position",
+   "line:Rb1|0|Rb1",
+   "candidate"
+  ],
+  [
+   "position",
+   "line:h4|0|h4",
+   "candidate"
+  ],
+  [
+   "position",
+   "line:Qc2|0|Qc2",
+   "candidate"
+  ],
+  [
+   "line:Rxg7+|0|Rxg7+",
+   "motif:check|Rxg7+|0",
+   "gives"
+  ],
+  [
+   "line:Rxg7+|0|Rxg7+",
+   "line:Rxg7+|1|Kf8",
+   "best_reply"
+  ],
+  [
+   "piece:BP@g7",
+   "line:Rxg7+|0|Rxg7+",
+   "captured_by"
+  ],
+  [
+   "motif:check|Rxg7+|0",
+   "piece:BK@g8",
+   "targets"
+  ],
+  [
+   "motif:check|Rxg7+|0",
+   "line:Rxg7+|1|Kf8",
+   "answered_by"
+  ],
+  [
+   "line:Rxg7+|1|Kf8",
+   "line:Rxg7+|2|Rg3",
+   "then"
+  ],
+  [
+   "line:Rxg7+|2|Rg3",
+   "line:Rxg7+|3|cxb2",
+   "best_reply"
+  ],
+  [
+   "line:Rxg7+|3|cxb2",
+   "line:Rxg7+|4|Rb1",
+   "then"
+  ],
+  [
+   "piece:WP@b2",
+   "line:Rxg7+|3|cxb2",
+   "captured_by"
+  ],
+  [
+   "piece:WP@b2",
+   "line:h4|1|cxb2",
+   "captured_by"
+  ],
+  [
+   "piece:WP@b2",
+   "line:Qc2|1|cxb2",
+   "captured_by"
+  ],
+  [
+   "line:Rxg7+|4|Rb1",
+   "line:Rxg7+|5|Bd6",
+   "best_reply"
+  ],
+  [
+   "line:Rxg7+|5|Bd6",
+   "outcome:Rxg7+",
+   "results_in"
+  ],
+  [
+   "outcome:Rxg7+",
+   "goal",
+   "achieves"
+  ],
+  [
+   "line:bxc3|0|bxc3",
+   "line:bxc3|1|g6",
+   "best_reply"
+  ],
+  [
+   "piece:BP@c3",
+   "line:bxc3|0|bxc3",
+   "captured_by"
+  ],
+  [
+   "piece:BP@c3",
+   "line:Rb1|2|bxc3",
+   "captured_by"
+  ],
+  [
+   "line:bxc3|1|g6",
+   "line:bxc3|2|h4",
+   "then"
+  ],
+  [
+   "line:bxc3|2|h4",
+   "line:bxc3|3|Nd7",
+   "best_reply"
+  ],
+  [
+   "line:bxc3|3|Nd7",
+   "line:bxc3|4|h5",
+   "then"
+  ],
+  [
+   "line:bxc3|4|h5",
+   "motif:pinshield|bxc3|4|g6",
+   "exploits"
+  ],
+  [
+   "line:bxc3|4|h5",
+   "line:bxc3|5|Nxe5",
+   "best_reply"
+  ],
+  [
+   "motif:pinshield|bxc3|4|g6",
+   "piece:BP@g6",
+   "targets"
+  ],
+  [
+   "motif:pinshield|bxc3|4|g6",
+   "piece:WP@h5",
+   "shields"
+  ],
+  [
+   "line:bxc3|5|Nxe5",
+   "outcome:bxc3",
+   "results_in"
+  ],
+  [
+   "piece:WB@e5",
+   "line:bxc3|5|Nxe5",
+   "captured_by"
+  ],
+  [
+   "piece:WB@e5",
+   "line:Rb1|5|Bxe5",
+   "captured_by"
+  ],
+  [
+   "line:Rb1|0|Rb1",
+   "line:Rb1|1|g6",
+   "best_reply"
+  ],
+  [
+   "line:Rb1|1|g6",
+   "line:Rb1|2|bxc3",
+   "then"
+  ],
+  [
+   "line:Rb1|2|bxc3",
+   "line:Rb1|3|Bd6",
+   "best_reply"
+  ],
+  [
+   "line:Rb1|3|Bd6",
+   "line:Rb1|4|Qe2",
+   "then"
+  ],
+  [
+   "line:Rb1|4|Qe2",
+   "line:Rb1|5|Bxe5",
+   "best_reply"
+  ],
+  [
+   "line:Rb1|5|Bxe5",
+   "outcome:Rb1",
+   "results_in"
+  ],
+  [
+   "line:h4|0|h4",
+   "line:h4|1|cxb2",
+   "best_reply"
+  ],
+  [
+   "line:h4|1|cxb2",
+   "line:h4|2|Rb1",
+   "then"
+  ],
+  [
+   "line:h4|2|Rb1",
+   "line:h4|3|Bd6",
+   "best_reply"
+  ],
+  [
+   "line:h4|3|Bd6",
+   "line:h4|4|Rxb2",
+   "then"
+  ],
+  [
+   "line:h4|4|Rxb2",
+   "line:h4|5|Rb8",
+   "best_reply"
+  ],
+  [
+   "piece:BP@b2",
+   "line:h4|4|Rxb2",
+   "captured_by"
+  ],
+  [
+   "piece:BP@b2",
+   "line:Qc2|4|Qxb2",
+   "captured_by"
+  ],
+  [
+   "line:h4|5|Rb8",
+   "outcome:h4",
+   "results_in"
+  ],
+  [
+   "line:Qc2|0|Qc2",
+   "line:Qc2|1|cxb2",
+   "best_reply"
+  ],
+  [
+   "line:Qc2|1|cxb2",
+   "line:Qc2|2|Rb1",
+   "then"
+  ],
+  [
+   "line:Qc2|2|Rb1",
+   "line:Qc2|3|Rc8",
+   "best_reply"
+  ],
+  [
+   "line:Qc2|3|Rc8",
+   "line:Qc2|4|Qxb2",
+   "then"
+  ],
+  [
+   "line:Qc2|4|Qxb2",
+   "line:Qc2|5|Rc6",
+   "best_reply"
+  ],
+  [
+   "line:Qc2|5|Rc6",
+   "outcome:Qc2",
+   "results_in"
+  ]
+ ],
+ "accepted": [
+  [
+   "position",
+   "line:Rxg7+|0|Rxg7+",
+   "motif:check|Rxg7+|0",
+   "line:Rxg7+|1|Kf8",
+   "line:Rxg7+|2|Rg3",
+   "line:Rxg7+|3|cxb2",
+   "line:Rxg7+|4|Rb1",
+   "line:Rxg7+|5|Bd6",
+   "outcome:Rxg7+",
+   "goal"
+  ],
+  [
+   "position",
+   "line:Rxg7+|0|Rxg7+",
+   "line:Rxg7+|1|Kf8",
+   "line:Rxg7+|2|Rg3",
+   "line:Rxg7+|3|cxb2",
+   "line:Rxg7+|4|Rb1",
+   "line:Rxg7+|5|Bd6",
+   "outcome:Rxg7+",
+   "goal"
+  ]
+ ],
+ "sub_nodes": [
+  "goal",
+  "line:Rxg7+|0|Rxg7+",
+  "line:Rxg7+|1|Kf8",
+  "line:Rxg7+|2|Rg3",
+  "line:Rxg7+|3|cxb2",
+  "line:Rxg7+|4|Rb1",
+  "line:Rxg7+|5|Bd6",
+  "motif:check|Rxg7+|0",
+  "outcome:Rxg7+",
+  "position"
+ ],
+ "sub_edges": [
+  [
+   "line:Rxg7+|0|Rxg7+",
+   "line:Rxg7+|1|Kf8"
+  ],
+  [
+   "line:Rxg7+|0|Rxg7+",
+   "motif:check|Rxg7+|0"
+  ],
+  [
+   "line:Rxg7+|1|Kf8",
+   "line:Rxg7+|2|Rg3"
+  ],
+  [
+   "line:Rxg7+|2|Rg3",
+   "line:Rxg7+|3|cxb2"
+  ],
+  [
+   "line:Rxg7+|3|cxb2",
+   "line:Rxg7+|4|Rb1"
+  ],
+  [
+   "line:Rxg7+|4|Rb1",
+   "line:Rxg7+|5|Bd6"
+  ],
+  [
+   "line:Rxg7+|5|Bd6",
+   "outcome:Rxg7+"
+  ],
+  [
+   "motif:check|Rxg7+|0",
+   "line:Rxg7+|1|Kf8"
+  ],
+  [
+   "outcome:Rxg7+",
+   "goal"
+  ],
+  [
+   "position",
+   "line:Rxg7+|0|Rxg7+"
+  ]
+ ],
+ "events": [
+  {
+   "sim": 1,
+   "selected": [
+    "position"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|0|Rxg7+",
+     0.771
+    ],
+    [
+     "line:bxc3|0|bxc3",
+     0.038
+    ],
+    [
+     "line:Rb1|0|Rb1",
+     0.104
+    ],
+    [
+     "line:h4|0|h4",
+     0.023
+    ],
+    [
+     "line:Qc2|0|Qc2",
+     0.063
+    ]
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 2,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|1|Kf8",
+     0.378
+    ],
+    [
+     "motif:check|Rxg7+|0",
+     0.622
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 3,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|1|Kf8",
+     0.731
+    ],
+    [
+     "piece:BK@g8",
+     0.269
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 4,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|2|Rg3",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 5,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|3|cxb2",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 6,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|4|Rb1",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 7,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|2|Rg3",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 8,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|3|cxb2",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 9,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|4|Rb1",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 10,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|5|Bd6",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 11,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1"
+   ],
+   "expanded": [
+    [
+     "line:Rxg7+|5|Bd6",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 12,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6"
+   ],
+   "expanded": [
+    [
+     "outcome:Rxg7+",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 13,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6"
+   ],
+   "expanded": [
+    [
+     "outcome:Rxg7+",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 14,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6",
+    "outcome:Rxg7+"
+   ],
+   "expanded": [
+    [
+     "goal",
+     1.0
+    ]
+   ],
+   "accepted": [
+    [
+     "position",
+     "line:Rxg7+|0|Rxg7+",
+     "motif:check|Rxg7+|0",
+     "line:Rxg7+|1|Kf8",
+     "line:Rxg7+|2|Rg3",
+     "line:Rxg7+|3|cxb2",
+     "line:Rxg7+|4|Rb1",
+     "line:Rxg7+|5|Bd6",
+     "outcome:Rxg7+",
+     "goal"
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 15,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "piece:BK@g8"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 16,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6",
+    "outcome:Rxg7+"
+   ],
+   "expanded": [
+    [
+     "goal",
+     1.0
+    ]
+   ],
+   "accepted": [
+    [
+     "position",
+     "line:Rxg7+|0|Rxg7+",
+     "line:Rxg7+|1|Kf8",
+     "line:Rxg7+|2|Rg3",
+     "line:Rxg7+|3|cxb2",
+     "line:Rxg7+|4|Rb1",
+     "line:Rxg7+|5|Bd6",
+     "outcome:Rxg7+",
+     "goal"
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 17,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6",
+    "outcome:Rxg7+"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 18,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 19,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 20,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 21,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 22,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6",
+    "outcome:Rxg7+"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 23,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 24,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 25,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 26,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 27,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 28,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 29,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 30,
+   "selected": [
+    "position",
+    "line:Rxg7+|0|Rxg7+"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 31,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1"
+   ],
+   "expanded": [
+    [
+     "line:Rb1|1|g6",
+     1.0
+    ]
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 32,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2"
+   ],
+   "expanded": [
+    [
+     "line:Qc2|1|cxb2",
+     1.0
+    ]
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 33,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3"
+   ],
+   "expanded": [
+    [
+     "line:bxc3|1|g6",
+     1.0
+    ]
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 34,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6"
+   ],
+   "expanded": [
+    [
+     "line:Rb1|2|bxc3",
+     1.0
+    ]
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 35,
+   "selected": [
+    "position",
+    "line:h4|0|h4"
+   ],
+   "expanded": [
+    [
+     "line:h4|1|cxb2",
+     1.0
+    ]
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 36,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3"
+   ],
+   "expanded": [
+    [
+     "line:Rb1|3|Bd6",
+     1.0
+    ]
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 37,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2"
+   ],
+   "expanded": [
+    [
+     "line:Qc2|2|Rb1",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 38,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1"
+   ],
+   "expanded": [
+    [
+     "line:Qc2|3|Rc8",
+     1.0
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 39,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8"
+   ],
+   "expanded": [
+    [
+     "line:Qc2|4|Qxb2",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 40,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8",
+    "line:Qc2|4|Qxb2"
+   ],
+   "expanded": [
+    [
+     "line:Qc2|5|Rc6",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 41,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8",
+    "line:Qc2|4|Qxb2",
+    "line:Qc2|5|Rc6"
+   ],
+   "expanded": [
+    [
+     "outcome:Qc2",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 42,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8",
+    "line:Qc2|4|Qxb2",
+    "line:Qc2|5|Rc6",
+    "outcome:Qc2"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 43,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8",
+    "line:Qc2|4|Qxb2",
+    "line:Qc2|5|Rc6"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 44,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8",
+    "line:Qc2|4|Qxb2"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 45,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 46,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 47,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 48,
+   "selected": [
+    "position",
+    "line:Qc2|0|Qc2"
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 49,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6"
+   ],
+   "expanded": [
+    [
+     "line:Rb1|4|Qe2",
+     1.0
+    ]
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 50,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6",
+    "line:Rb1|4|Qe2"
+   ],
+   "expanded": [
+    [
+     "line:Rb1|5|Bxe5",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 51,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6",
+    "line:Rb1|4|Qe2",
+    "line:Rb1|5|Bxe5"
+   ],
+   "expanded": [
+    [
+     "outcome:Rb1",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 52,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6",
+    "line:Rb1|4|Qe2",
+    "line:Rb1|5|Bxe5",
+    "outcome:Rb1"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 53,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6",
+    "line:Rb1|4|Qe2",
+    "line:Rb1|5|Bxe5"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 54,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6",
+    "line:Rb1|4|Qe2"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 55,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6"
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 56,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3"
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 57,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6"
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 58,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6"
+   ],
+   "expanded": [
+    [
+     "line:bxc3|2|h4",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 59,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4"
+   ],
+   "expanded": [
+    [
+     "line:bxc3|3|Nd7",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 60,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7"
+   ],
+   "expanded": [
+    [
+     "line:bxc3|4|h5",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 61,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5"
+   ],
+   "expanded": [
+    [
+     "motif:pinshield|bxc3|4|g6",
+     0.971
+    ],
+    [
+     "line:bxc3|5|Nxe5",
+     0.029
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 62,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "motif:pinshield|bxc3|4|g6"
+   ],
+   "expanded": [
+    [
+     "piece:BP@g6",
+     0.953
+    ],
+    [
+     "piece:WP@h5",
+     0.047
+    ]
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 63,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "motif:pinshield|bxc3|4|g6",
+    "piece:BP@g6"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 64,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "motif:pinshield|bxc3|4|g6",
+    "piece:WP@h5"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 65,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "motif:pinshield|bxc3|4|g6"
+   ],
+   "value": 1.0
+  },
+  {
+   "sim": 66,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "line:bxc3|5|Nxe5"
+   ],
+   "expanded": [
+    [
+     "outcome:bxc3",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 67,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "line:bxc3|5|Nxe5",
+    "outcome:bxc3"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 68,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "line:bxc3|5|Nxe5"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 69,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 70,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 71,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 72,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 73,
+   "selected": [
+    "position",
+    "line:bxc3|0|bxc3"
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 74,
+   "selected": [
+    "position",
+    "line:Rb1|0|Rb1"
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 75,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2"
+   ],
+   "expanded": [
+    [
+     "line:h4|2|Rb1",
+     1.0
+    ]
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 76,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1"
+   ],
+   "expanded": [
+    [
+     "line:h4|3|Bd6",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 77,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6"
+   ],
+   "expanded": [
+    [
+     "line:h4|4|Rxb2",
+     1.0
+    ]
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 78,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6",
+    "line:h4|4|Rxb2"
+   ],
+   "expanded": [
+    [
+     "line:h4|5|Rb8",
+     1.0
+    ]
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 79,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6",
+    "line:h4|4|Rxb2",
+    "line:h4|5|Rb8"
+   ],
+   "expanded": [
+    [
+     "outcome:h4",
+     1.0
+    ]
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 80,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6",
+    "line:h4|4|Rxb2",
+    "line:h4|5|Rb8",
+    "outcome:h4"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 81,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6",
+    "line:h4|4|Rxb2",
+    "line:h4|5|Rb8"
+   ],
+   "value": -0.333
+  },
+  {
+   "sim": 82,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6",
+    "line:h4|4|Rxb2"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 83,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 84,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1"
+   ],
+   "value": 0.333
+  },
+  {
+   "sim": 85,
+   "selected": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2"
+   ],
+   "value": -1.0
+  },
+  {
+   "sim": 86,
+   "selected": [
+    "position",
+    "line:h4|0|h4"
+   ],
+   "value": -1.0
+  }
+ ],
+ "tree": [
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+",
+   "parent": "position",
+   "node": "line:Rxg7+|0|Rxg7+",
+   "n": 29,
+   "q": 0.885,
+   "p": 0.771,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3",
+   "parent": "position",
+   "node": "line:bxc3|0|bxc3",
+   "n": 17,
+   "q": 0.098,
+   "p": 0.038,
+   "v": -0.3333333333333333
+  },
+  {
+   "id": "position > line:Rb1|0|Rb1",
+   "parent": "position",
+   "node": "line:Rb1|0|Rb1",
+   "n": 13,
+   "q": -0.179,
+   "p": 0.104,
+   "v": -0.3333333333333333
+  },
+  {
+   "id": "position > line:h4|0|h4",
+   "parent": "position",
+   "node": "line:h4|0|h4",
+   "n": 13,
+   "q": -0.487,
+   "p": 0.023,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:Qc2|0|Qc2",
+   "parent": "position",
+   "node": "line:Qc2|0|Qc2",
+   "n": 13,
+   "q": 0.231,
+   "p": 0.063,
+   "v": -0.3333333333333333
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8",
+   "parent": "position > line:Rxg7+|0|Rxg7+",
+   "node": "line:Rxg7+|1|Kf8",
+   "n": 12,
+   "q": 1.0,
+   "p": 0.378,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0",
+   "parent": "position > line:Rxg7+|0|Rxg7+",
+   "node": "motif:check|Rxg7+|0",
+   "n": 15,
+   "q": 0.778,
+   "p": 0.622,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0",
+   "node": "line:Rxg7+|1|Kf8",
+   "n": 12,
+   "q": 0.889,
+   "p": 0.731,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > piece:BK@g8",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0",
+   "node": "piece:BK@g8",
+   "n": 1,
+   "q": -1.0,
+   "p": 0.269,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8",
+   "node": "line:Rxg7+|2|Rg3",
+   "n": 10,
+   "q": 0.867,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3",
+   "node": "line:Rxg7+|3|cxb2",
+   "n": 8,
+   "q": 0.833,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2",
+   "node": "line:Rxg7+|4|Rb1",
+   "n": 6,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8",
+   "node": "line:Rxg7+|2|Rg3",
+   "n": 10,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3",
+   "node": "line:Rxg7+|3|cxb2",
+   "n": 8,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2",
+   "node": "line:Rxg7+|4|Rb1",
+   "n": 6,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1",
+   "node": "line:Rxg7+|5|Bd6",
+   "n": 4,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1",
+   "node": "line:Rxg7+|5|Bd6",
+   "n": 4,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6 > outcome:Rxg7+",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6",
+   "node": "outcome:Rxg7+",
+   "n": 2,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6 > outcome:Rxg7+",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6",
+   "node": "outcome:Rxg7+",
+   "n": 2,
+   "q": 1.0,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6 > outcome:Rxg7+ > goal",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > motif:check|Rxg7+|0 > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6 > outcome:Rxg7+",
+   "node": "goal",
+   "n": 0,
+   "q": null,
+   "p": 1.0,
+   "v": null
+  },
+  {
+   "id": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6 > outcome:Rxg7+ > goal",
+   "parent": "position > line:Rxg7+|0|Rxg7+ > line:Rxg7+|1|Kf8 > line:Rxg7+|2|Rg3 > line:Rxg7+|3|cxb2 > line:Rxg7+|4|Rb1 > line:Rxg7+|5|Bd6 > outcome:Rxg7+",
+   "node": "goal",
+   "n": 0,
+   "q": null,
+   "p": 1.0,
+   "v": null
+  },
+  {
+   "id": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6",
+   "parent": "position > line:Rb1|0|Rb1",
+   "node": "line:Rb1|1|g6",
+   "n": 11,
+   "q": -0.152,
+   "p": 1.0,
+   "v": -0.3333333333333333
+  },
+  {
+   "id": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2",
+   "parent": "position > line:Qc2|0|Qc2",
+   "node": "line:Qc2|1|cxb2",
+   "n": 11,
+   "q": 0.333,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6",
+   "parent": "position > line:bxc3|0|bxc3",
+   "node": "line:bxc3|1|g6",
+   "n": 15,
+   "q": 0.156,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3",
+   "parent": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6",
+   "node": "line:Rb1|2|bxc3",
+   "n": 9,
+   "q": -0.111,
+   "p": 1.0,
+   "v": -0.3333333333333333
+  },
+  {
+   "id": "position > line:h4|0|h4 > line:h4|1|cxb2",
+   "parent": "position > line:h4|0|h4",
+   "node": "line:h4|1|cxb2",
+   "n": 11,
+   "q": -0.394,
+   "p": 1.0,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3 > line:Rb1|3|Bd6",
+   "parent": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3",
+   "node": "line:Rb1|3|Bd6",
+   "n": 7,
+   "q": -0.048,
+   "p": 1.0,
+   "v": -0.3333333333333333
+  },
+  {
+   "id": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1",
+   "parent": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2",
+   "node": "line:Qc2|2|Rb1",
+   "n": 9,
+   "q": 0.333,
+   "p": 1.0,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1 > line:Qc2|3|Rc8",
+   "parent": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1",
+   "node": "line:Qc2|3|Rc8",
+   "n": 7,
+   "q": 0.143,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1 > line:Qc2|3|Rc8 > line:Qc2|4|Qxb2",
+   "parent": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1 > line:Qc2|3|Rc8",
+   "node": "line:Qc2|4|Qxb2",
+   "n": 5,
+   "q": 0.067,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1 > line:Qc2|3|Rc8 > line:Qc2|4|Qxb2 > line:Qc2|5|Rc6",
+   "parent": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1 > line:Qc2|3|Rc8 > line:Qc2|4|Qxb2",
+   "node": "line:Qc2|5|Rc6",
+   "n": 3,
+   "q": -0.111,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1 > line:Qc2|3|Rc8 > line:Qc2|4|Qxb2 > line:Qc2|5|Rc6 > outcome:Qc2",
+   "parent": "position > line:Qc2|0|Qc2 > line:Qc2|1|cxb2 > line:Qc2|2|Rb1 > line:Qc2|3|Rc8 > line:Qc2|4|Qxb2 > line:Qc2|5|Rc6",
+   "node": "outcome:Qc2",
+   "n": 1,
+   "q": -1.0,
+   "p": 1.0,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3 > line:Rb1|3|Bd6 > line:Rb1|4|Qe2",
+   "parent": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3 > line:Rb1|3|Bd6",
+   "node": "line:Rb1|4|Qe2",
+   "n": 5,
+   "q": 0.067,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3 > line:Rb1|3|Bd6 > line:Rb1|4|Qe2 > line:Rb1|5|Bxe5",
+   "parent": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3 > line:Rb1|3|Bd6 > line:Rb1|4|Qe2",
+   "node": "line:Rb1|5|Bxe5",
+   "n": 3,
+   "q": -0.111,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3 > line:Rb1|3|Bd6 > line:Rb1|4|Qe2 > line:Rb1|5|Bxe5 > outcome:Rb1",
+   "parent": "position > line:Rb1|0|Rb1 > line:Rb1|1|g6 > line:Rb1|2|bxc3 > line:Rb1|3|Bd6 > line:Rb1|4|Qe2 > line:Rb1|5|Bxe5",
+   "node": "outcome:Rb1",
+   "n": 1,
+   "q": -1.0,
+   "p": 1.0,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6",
+   "node": "line:bxc3|2|h4",
+   "n": 13,
+   "q": 0.128,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4",
+   "node": "line:bxc3|3|Nd7",
+   "n": 11,
+   "q": 0.091,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7",
+   "node": "line:bxc3|4|h5",
+   "n": 9,
+   "q": 0.037,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > motif:pinshield|bxc3|4|g6",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5",
+   "node": "motif:pinshield|bxc3|4|g6",
+   "n": 4,
+   "q": 0.0,
+   "p": 0.971,
+   "v": 1.0
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > line:bxc3|5|Nxe5",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5",
+   "node": "line:bxc3|5|Nxe5",
+   "n": 3,
+   "q": -0.111,
+   "p": 0.029,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > motif:pinshield|bxc3|4|g6 > piece:BP@g6",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > motif:pinshield|bxc3|4|g6",
+   "node": "piece:BP@g6",
+   "n": 1,
+   "q": -1.0,
+   "p": 0.953,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > motif:pinshield|bxc3|4|g6 > piece:WP@h5",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > motif:pinshield|bxc3|4|g6",
+   "node": "piece:WP@h5",
+   "n": 1,
+   "q": -1.0,
+   "p": 0.047,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > line:bxc3|5|Nxe5 > outcome:bxc3",
+   "parent": "position > line:bxc3|0|bxc3 > line:bxc3|1|g6 > line:bxc3|2|h4 > line:bxc3|3|Nd7 > line:bxc3|4|h5 > line:bxc3|5|Nxe5",
+   "node": "outcome:bxc3",
+   "n": 1,
+   "q": -1.0,
+   "p": 1.0,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1",
+   "parent": "position > line:h4|0|h4 > line:h4|1|cxb2",
+   "node": "line:h4|2|Rb1",
+   "n": 9,
+   "q": -0.259,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1 > line:h4|3|Bd6",
+   "parent": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1",
+   "node": "line:h4|3|Bd6",
+   "n": 7,
+   "q": -0.429,
+   "p": 1.0,
+   "v": -1.0
+  },
+  {
+   "id": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1 > line:h4|3|Bd6 > line:h4|4|Rxb2",
+   "parent": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1 > line:h4|3|Bd6",
+   "node": "line:h4|4|Rxb2",
+   "n": 5,
+   "q": -0.2,
+   "p": 1.0,
+   "v": 0.3333333333333333
+  },
+  {
+   "id": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1 > line:h4|3|Bd6 > line:h4|4|Rxb2 > line:h4|5|Rb8",
+   "parent": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1 > line:h4|3|Bd6 > line:h4|4|Rxb2",
+   "node": "line:h4|5|Rb8",
+   "n": 3,
+   "q": -0.556,
+   "p": 1.0,
+   "v": -0.3333333333333333
+  },
+  {
+   "id": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1 > line:h4|3|Bd6 > line:h4|4|Rxb2 > line:h4|5|Rb8 > outcome:h4",
+   "parent": "position > line:h4|0|h4 > line:h4|1|cxb2 > line:h4|2|Rb1 > line:h4|3|Bd6 > line:h4|4|Rxb2 > line:h4|5|Rb8",
+   "node": "outcome:h4",
+   "n": 1,
+   "q": -1.0,
+   "p": 1.0,
+   "v": -1.0
+  }
+ ],
+ "explanation": "In this position, White's best candidate move is Rxg7+, which gives a check on the Black king and forces Black to respond. The best reply for Black is Kf8, after which White continues with Rg3, maintaining strong pressure. Black tries to counter with cxb2, but White follows up with Rb1, and after Black's Bd6, White achieves a decisive advantage with a Stockfish evaluation of +6.22. This sequence shows how the initial sacrifice Rxg7+ opens lines and exploits Black's weaknesses, leading to a winning position for White.",
+ "calls": {
+  "prior": 5,
+  "eval": 40,
+  "explain": 1,
+  "baseline": 1
+ },
+ "baseline": {
+  "move": "Bxf6",
+  "explanation": "White plays Bxf6 to remove the key defender of Black's kingside and open lines towards the Black king. If Black recaptures with gxf6, White can increase pressure on the weakened kingside pawn structure and exploit the open g-file with the rook on g3. Additionally, this move threatens to disrupt Black's coordination and create tactical opportunities, especially targeting the pinned knight on f6 and the weakened dark squares around Black's king.",
+  "correct": false
+ },
+ "engine": [
+  [
+   622,
+   "Rxg7+"
+  ],
+  [
+   45,
+   "bxc3"
+  ],
+  [
+   8,
+   "Rb1"
+  ],
+  [
+   7,
+   "h4"
+  ],
+  [
+   -3,
+   "Qc2"
+  ]
+ ],
+ "engine_full": [
+  [
+   622,
+   "Rxg7+",
+   [
+    "Rxg7+",
+    "Kf8",
+    "Rg3",
+    "cxb2",
+    "Rb1",
+    "Bd6"
+   ],
+   "+6.22"
+  ],
+  [
+   45,
+   "bxc3",
+   [
+    "bxc3",
+    "g6",
+    "h4",
+    "Nd7",
+    "h5",
+    "Nxe5"
+   ],
+   "+0.45"
+  ],
+  [
+   8,
+   "Rb1",
+   [
+    "Rb1",
+    "g6",
+    "bxc3",
+    "Bd6",
+    "Qe2",
+    "Bxe5"
+   ],
+   "+0.08"
+  ],
+  [
+   7,
+   "h4",
+   [
+    "h4",
+    "cxb2",
+    "Rb1",
+    "Bd6",
+    "Rxb2",
+    "Rb8"
+   ],
+   "+0.07"
+  ],
+  [
+   -3,
+   "Qc2",
+   [
+    "Qc2",
+    "cxb2",
+    "Rb1",
+    "Rc8",
+    "Qxb2",
+    "Rc6"
+   ],
+   "-0.03"
+  ]
+ ],
+ "llm_log": [
+  {
+   "kind": "prior",
+   "sim": 1,
+   "path": [
+    "position"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nCurrent partial chain:\nPosition (White to move)\n\nCandidate next steps:\n0: --candidate--> Rxg7+\n1: --candidate--> bxc3\n2: --candidate--> Rb1\n3: --candidate--> h4\n4: --candidate--> Qc2\n\nScore each candidate 0-10 for how likely it continues a CORRECT and RELEVANT explanation. Return JSON {\"scores\": {\"0\": s0, \"1\": s1, ...}}.",
+   "response": "{\"scores\": {\"0\": 9, \"1\": 3, \"2\": 5, \"3\": 2, \"4\": 4}}",
+   "seconds": 3.14,
+   "in_tokens": 292,
+   "out_tokens": 34
+  },
+  {
+   "kind": "eval",
+   "sim": 1,
+   "path": [
+    "position"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 0, \"reason\": \"No moves or tactics identified yet\"}",
+   "seconds": 1.18,
+   "in_tokens": 269,
+   "out_tokens": 18
+  },
+  {
+   "kind": "prior",
+   "sim": 2,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nCurrent partial chain:\nPosition (White to move) --candidate--> Rxg7+\n\nCandidate next steps:\n0: --best_reply--> Kf8 (reply)\n1: --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7)\n\nScore each candidate 0-10 for how likely it continues a CORRECT and RELEVANT explanation. Return JSON {\"scores\": {\"0\": s0, \"1\": s1, ...}}.",
+   "response": "{\"scores\": {\"0\": 9, \"1\": 10}}",
+   "seconds": 1.11,
+   "in_tokens": 294,
+   "out_tokens": 16
+  },
+  {
+   "kind": "eval",
+   "sim": 2,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Rxg7+ is a strong forcing move exploiting Black's king safety.\"}",
+   "seconds": 1.08,
+   "in_tokens": 276,
+   "out_tokens": 27
+  },
+  {
+   "kind": "prior",
+   "sim": 3,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nCurrent partial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7)\n\nCandidate next steps:\n0: --answered_by--> Kf8 (reply)\n1: --targets--> Black king g8\n\nScore each candidate 0-10 for how likely it continues a CORRECT and RELEVANT explanation. Return JSON {\"scores\": {\"0\": s0, \"1\": s1, ...}}.",
+   "response": "{\"scores\": {\"0\": 9, \"1\": 7}}",
+   "seconds": 1.01,
+   "in_tokens": 302,
+   "out_tokens": 16
+  },
+  {
+   "kind": "eval",
+   "sim": 3,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Rxg7+ is a forcing move creating decisive attack.\"}",
+   "seconds": 1.01,
+   "in_tokens": 301,
+   "out_tokens": 24
+  },
+  {
+   "kind": "eval",
+   "sim": 4,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Rxg7+ is a strong forcing move leading to advantage.\"}",
+   "seconds": 1.08,
+   "in_tokens": 311,
+   "out_tokens": 25
+  },
+  {
+   "kind": "eval",
+   "sim": 5,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply) --then--> Rg3 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Rxg7+ initiates a strong attack forcing Black's king\"}",
+   "seconds": 1.14,
+   "in_tokens": 320,
+   "out_tokens": 25
+  },
+  {
+   "kind": "eval",
+   "sim": 6,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant sacrifice and follow-up, but incomplete\"}",
+   "seconds": 1.03,
+   "in_tokens": 330,
+   "out_tokens": 20
+  },
+  {
+   "kind": "eval",
+   "sim": 7,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --best_reply--> Kf8 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Rxg7+ is a strong forcing move exploiting Black's king safety.\"}",
+   "seconds": 1.02,
+   "in_tokens": 286,
+   "out_tokens": 27
+  },
+  {
+   "kind": "eval",
+   "sim": 8,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --best_reply--> Kf8 (reply) --then--> Rg3 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Rxg7+ initiates a strong attack forcing king move.\"}",
+   "seconds": 1.51,
+   "in_tokens": 295,
+   "out_tokens": 25
+  },
+  {
+   "kind": "eval",
+   "sim": 9,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --best_reply--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Rxg7+ initiates a strong attack leading to advantage.\"}",
+   "seconds": 1.26,
+   "in_tokens": 305,
+   "out_tokens": 25
+  },
+  {
+   "kind": "eval",
+   "sim": 10,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply) --then--> Rb1 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Shows forcing sequence leading to decisive advantage.\"}",
+   "seconds": 1.76,
+   "in_tokens": 339,
+   "out_tokens": 20
+  },
+  {
+   "kind": "eval",
+   "sim": 11,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --best_reply--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply) --then--> Rb1 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Forcing attack sequence leading to decisive material gain.\"}",
+   "seconds": 1.0,
+   "in_tokens": 314,
+   "out_tokens": 22
+  },
+  {
+   "kind": "eval",
+   "sim": 12,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Bd6 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Shows forcing sequence leading to decisive advantage.\"}",
+   "seconds": 1.05,
+   "in_tokens": 348,
+   "out_tokens": 20
+  },
+  {
+   "kind": "eval",
+   "sim": 13,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --best_reply--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Bd6 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Forcing sequence exploiting Black's weakened king position.\"}",
+   "seconds": 1.05,
+   "in_tokens": 323,
+   "out_tokens": 22
+  },
+  {
+   "kind": "eval",
+   "sim": 14,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "motif:check|Rxg7+|0",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6",
+    "outcome:Rxg7+"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Bd6 (reply) --results_in--> After Rxg7+: +6.22 (Stockfish d18)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Shows forcing moves leading to decisive advantage.\"}",
+   "seconds": 1.13,
+   "in_tokens": 367,
+   "out_tokens": 20
+  },
+  {
+   "kind": "eval",
+   "sim": 16,
+   "path": [
+    "position",
+    "line:Rxg7+|0|Rxg7+",
+    "line:Rxg7+|1|Kf8",
+    "line:Rxg7+|2|Rg3",
+    "line:Rxg7+|3|cxb2",
+    "line:Rxg7+|4|Rb1",
+    "line:Rxg7+|5|Bd6",
+    "outcome:Rxg7+"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rxg7+ --best_reply--> Kf8 (reply) --then--> Rg3 (then) --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Bd6 (reply) --results_in--> After Rxg7+: +6.22 (Stockfish d18)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Shows forcing moves leading to decisive advantage.\"}",
+   "seconds": 0.96,
+   "in_tokens": 342,
+   "out_tokens": 20
+  },
+  {
+   "kind": "eval",
+   "sim": 31,
+   "path": [
+    "position",
+    "line:Rb1|0|Rb1"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rb1\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 1, \"reason\": \"Rb1 is a developing move but not decisive here.\"}",
+   "seconds": 1.05,
+   "in_tokens": 276,
+   "out_tokens": 23
+  },
+  {
+   "kind": "eval",
+   "sim": 32,
+   "path": [
+    "position",
+    "line:Qc2|0|Qc2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Qc2\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 1, \"reason\": \"Qc2 is a quiet move, less direct impact\"}",
+   "seconds": 1.05,
+   "in_tokens": 276,
+   "out_tokens": 22
+  },
+  {
+   "kind": "eval",
+   "sim": 33,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> bxc3\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 1, \"reason\": \"bxc3 is a capture but not clearly decisive\"}",
+   "seconds": 1.05,
+   "in_tokens": 276,
+   "out_tokens": 22
+  },
+  {
+   "kind": "eval",
+   "sim": 34,
+   "path": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rb1 --best_reply--> g6 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 1, \"reason\": \"Rb1 is slow; g6 not critical reply here.\"}",
+   "seconds": 1.24,
+   "in_tokens": 284,
+   "out_tokens": 24
+  },
+  {
+   "kind": "eval",
+   "sim": 35,
+   "path": [
+    "position",
+    "line:h4|0|h4"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> h4\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 0, \"reason\": \"h4 move irrelevant in current position\"}",
+   "seconds": 0.96,
+   "in_tokens": 275,
+   "out_tokens": 19
+  },
+  {
+   "kind": "eval",
+   "sim": 36,
+   "path": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rb1 --best_reply--> g6 (reply) --then--> bxc3 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 1, \"reason\": \"Moves unclear, no direct winning tactic shown yet\"}",
+   "seconds": 1.27,
+   "in_tokens": 293,
+   "out_tokens": 21
+  },
+  {
+   "kind": "eval",
+   "sim": 37,
+   "path": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Qc2 --best_reply--> cxb2 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Qc2 pressures c3 pawn, cxb2 is forced reply\"}",
+   "seconds": 0.92,
+   "in_tokens": 285,
+   "out_tokens": 25
+  },
+  {
+   "kind": "eval",
+   "sim": 38,
+   "path": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Qc2 --best_reply--> cxb2 (reply) --then--> Rb1 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Qc2 pressures c3, cxb2 allows Rb1 pin and win.\"}",
+   "seconds": 1.07,
+   "in_tokens": 294,
+   "out_tokens": 29
+  },
+  {
+   "kind": "eval",
+   "sim": 39,
+   "path": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Qc2 --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Rc8 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant moves but lacks clear winning tactic yet\"}",
+   "seconds": 1.87,
+   "in_tokens": 303,
+   "out_tokens": 20
+  },
+  {
+   "kind": "eval",
+   "sim": 40,
+   "path": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8",
+    "line:Qc2|4|Qxb2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Qc2 --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Rc8 (reply) --then--> Qxb2 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant sequence but lacks clear winning tactic yet\"}",
+   "seconds": 1.1,
+   "in_tokens": 312,
+   "out_tokens": 20
+  },
+  {
+   "kind": "eval",
+   "sim": 41,
+   "path": [
+    "position",
+    "line:Qc2|0|Qc2",
+    "line:Qc2|1|cxb2",
+    "line:Qc2|2|Rb1",
+    "line:Qc2|3|Rc8",
+    "line:Qc2|4|Qxb2",
+    "line:Qc2|5|Rc6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Qc2 --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Rc8 (reply) --then--> Qxb2 (then) --best_reply--> Rc6 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant sequence but lacks clear winning tactic\"}",
+   "seconds": 0.99,
+   "in_tokens": 321,
+   "out_tokens": 19
+  },
+  {
+   "kind": "eval",
+   "sim": 49,
+   "path": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rb1 --best_reply--> g6 (reply) --then--> bxc3 (then) --best_reply--> Bd6 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 1, \"reason\": \"Rb1 and bxc3 seem unrelated to immediate advantage\"}",
+   "seconds": 1.5,
+   "in_tokens": 302,
+   "out_tokens": 23
+  },
+  {
+   "kind": "eval",
+   "sim": 50,
+   "path": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6",
+    "line:Rb1|4|Qe2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rb1 --best_reply--> g6 (reply) --then--> bxc3 (then) --best_reply--> Bd6 (reply) --then--> Qe2 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\":2, \"reason\":\"Relevant moves but lacks clear winning tactic yet.\"}",
+   "seconds": 0.9,
+   "in_tokens": 311,
+   "out_tokens": 19
+  },
+  {
+   "kind": "eval",
+   "sim": 51,
+   "path": [
+    "position",
+    "line:Rb1|0|Rb1",
+    "line:Rb1|1|g6",
+    "line:Rb1|2|bxc3",
+    "line:Rb1|3|Bd6",
+    "line:Rb1|4|Qe2",
+    "line:Rb1|5|Bxe5"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> Rb1 --best_reply--> g6 (reply) --then--> bxc3 (then) --best_reply--> Bd6 (reply) --then--> Qe2 (then) --best_reply--> Bxe5 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant moves but lacks clear winning tactic yet.\"}",
+   "seconds": 0.96,
+   "in_tokens": 321,
+   "out_tokens": 21
+  },
+  {
+   "kind": "eval",
+   "sim": 58,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant capture but unclear immediate winning idea\"}",
+   "seconds": 0.99,
+   "in_tokens": 284,
+   "out_tokens": 19
+  },
+  {
+   "kind": "eval",
+   "sim": 59,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply) --then--> h4 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"bxc3 opens lines; g6 weakens kingside; h4 aggressive\"}",
+   "seconds": 0.99,
+   "in_tokens": 292,
+   "out_tokens": 28
+  },
+  {
+   "kind": "eval",
+   "sim": 60,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply) --then--> h4 (then) --best_reply--> Nd7 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant moves but lacks direct winning tactic explanation\"}",
+   "seconds": 0.97,
+   "in_tokens": 301,
+   "out_tokens": 20
+  },
+  {
+   "kind": "prior",
+   "sim": 61,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nCurrent partial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply) --then--> h4 (then) --best_reply--> Nd7 (reply) --then--> h5 (then)\n\nCandidate next steps:\n0: --exploits--> Pin: Black pawn g6 is pinned to its king, so it cannot take on h5\n1: --best_reply--> Nxe5 (reply)\n\nScore each candidate 0-10 for how likely it continues a CORRECT and RELEVANT explanation. Return JSON {\"scores\": {\"0\": s0, \"1\": s1, ...}}.",
+   "response": "{\"scores\": {\"0\": 10, \"1\": 3}}",
+   "seconds": 1.43,
+   "in_tokens": 327,
+   "out_tokens": 16
+  },
+  {
+   "kind": "eval",
+   "sim": 61,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply) --then--> h4 (then) --best_reply--> Nd7 (reply) --then--> h5 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant moves, but unclear winning tactic yet\"}",
+   "seconds": 1.56,
+   "in_tokens": 309,
+   "out_tokens": 20
+  },
+  {
+   "kind": "prior",
+   "sim": 62,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "motif:pinshield|bxc3|4|g6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nCurrent partial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply) --then--> h4 (then) --best_reply--> Nd7 (reply) --then--> h5 (then) --exploits--> Pin: Black pawn g6 is pinned to its king, so it cannot take on h5\n\nCandidate next steps:\n0: --targets--> Black pawn g6\n1: --shields--> White pawn h5\n\nScore each candidate 0-10 for how likely it continues a CORRECT and RELEVANT explanation. Return JSON {\"scores\": {\"0\": s0, \"1\": s1, ...}}.",
+   "response": "{\"scores\": {\"0\": 9, \"1\": 3}}",
+   "seconds": 1.03,
+   "in_tokens": 334,
+   "out_tokens": 16
+  },
+  {
+   "kind": "eval",
+   "sim": 62,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "motif:pinshield|bxc3|4|g6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply) --then--> h4 (then) --best_reply--> Nd7 (reply) --then--> h5 (then) --exploits--> Pin: Black pawn g6 is pinned to its king, so it cannot take on h5\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 3, \"reason\": \"Pin on g6 pawn is key to White's attack.\"}",
+   "seconds": 1.31,
+   "in_tokens": 334,
+   "out_tokens": 24
+  },
+  {
+   "kind": "eval",
+   "sim": 66,
+   "path": [
+    "position",
+    "line:bxc3|0|bxc3",
+    "line:bxc3|1|g6",
+    "line:bxc3|2|h4",
+    "line:bxc3|3|Nd7",
+    "line:bxc3|4|h5",
+    "line:bxc3|5|Nxe5"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> bxc3 --best_reply--> g6 (reply) --then--> h4 (then) --best_reply--> Nd7 (reply) --then--> h5 (then) --best_reply--> Nxe5 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"Relevant attacking sequence but incomplete tactical clarity\"}",
+   "seconds": 1.19,
+   "in_tokens": 319,
+   "out_tokens": 19
+  },
+  {
+   "kind": "eval",
+   "sim": 75,
+   "path": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> h4 --best_reply--> cxb2 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 0, \"reason\": \"h4 is not a candidate move in this position\"}",
+   "seconds": 1.05,
+   "in_tokens": 284,
+   "out_tokens": 22
+  },
+  {
+   "kind": "eval",
+   "sim": 76,
+   "path": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> h4 --best_reply--> cxb2 (reply) --then--> Rb1 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 2, \"reason\": \"h4 and cxb2 are relevant but incomplete moves\"}",
+   "seconds": 1.15,
+   "in_tokens": 293,
+   "out_tokens": 23
+  },
+  {
+   "kind": "eval",
+   "sim": 77,
+   "path": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> h4 --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Bd6 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 0, \"reason\": \"h4 is not a candidate move in this position\"}",
+   "seconds": 1.04,
+   "in_tokens": 302,
+   "out_tokens": 22
+  },
+  {
+   "kind": "eval",
+   "sim": 78,
+   "path": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6",
+    "line:h4|4|Rxb2"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> h4 --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Bd6 (reply) --then--> Rxb2 (then)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\":2, \"reason\": \"Relevant sequence but unclear winning tactic yet\"}",
+   "seconds": 0.93,
+   "in_tokens": 311,
+   "out_tokens": 18
+  },
+  {
+   "kind": "eval",
+   "sim": 79,
+   "path": [
+    "position",
+    "line:h4|0|h4",
+    "line:h4|1|cxb2",
+    "line:h4|2|Rb1",
+    "line:h4|3|Bd6",
+    "line:h4|4|Rxb2",
+    "line:h4|5|Rb8"
+   ],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nPartial chain:\nPosition (White to move) --candidate--> h4 --best_reply--> cxb2 (reply) --then--> Rb1 (then) --best_reply--> Bd6 (reply) --then--> Rxb2 (then) --best_reply--> Rb8 (reply)\n\nRate 0-3 how promising this partial chain is as part of a correct, chess-meaningful explanation of how White wins (3 = directly explains the winning idea, 2 = relevant, 1 = weak, 0 = irrelevant or misleading). Return JSON {\"score\": s, \"reason\": \"<10 words>\"}.",
+   "response": "{\"score\": 1, \"reason\": \"Moves lack clear tactical or strategic impact\"}",
+   "seconds": 1.14,
+   "in_tokens": 321,
+   "out_tokens": 19
+  },
+  {
+   "kind": "explain",
+   "sim": "after search",
+   "path": [],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nUse ONLY these verified facts from the knowledge graph:\n- Rxg7+ --best_reply--> Kf8 (reply)\n- Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7)\n- Kf8 (reply) --then--> Rg3 (then)\n- Rg3 (then) --best_reply--> cxb2 (reply)\n- cxb2 (reply) --then--> Rb1 (then)\n- Rb1 (then) --best_reply--> Bd6 (reply)\n- Bd6 (reply) --results_in--> After Rxg7+: +6.22 (Stockfish d18)\n- Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply)\n- After Rxg7+: +6.22 (Stockfish d18) --achieves--> Goal: decisive advantage (\u2265 +3 or forced mate)\n- Position (White to move) --candidate--> Rxg7+\n\nWrite a 3-4 sentence explanation for a club player of White's winning move and why it works. Do not add facts that are not listed.",
+   "response": "In this position, White's best candidate move is Rxg7+, which gives a check on the Black king and forces Black to respond. The best reply for Black is Kf8, after which White continues with Rg3, maintaining strong pressure. Black tries to counter with cxb2, but White follows up with Rb1, and after Black's Bd6, White achieves a decisive advantage with a Stockfish evaluation of +6.22. This sequence shows how the initial sacrifice Rxg7+ opens lines and exploits Black's weaknesses, leading to a winning position for White.",
+   "seconds": 1.55,
+   "in_tokens": 447,
+   "out_tokens": 120
+  },
+  {
+   "kind": "baseline",
+   "sim": "baseline",
+   "path": [],
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. Find the best move and explain in 3-4 sentences why it works. Return JSON {\"move\": \"<SAN>\", \"explanation\": \"...\"}.",
+   "response": "{\"move\": \"Bxf6\", \"explanation\": \"White plays Bxf6 to remove the key defender of Black's kingside and open lines towards the Black king. If Black recaptures with gxf6, White can increase pressure on the weakened kingside pawn structure and exploit the open g-file with the rook on g3. Additionally, this move threatens to disrupt Black's coordination and create tactical opportunities, especially targeting the pinned knight on f6 and the weakened dark squares around Black's king.\"}",
+   "seconds": 1.74,
+   "in_tokens": 163,
+   "out_tokens": 105
+  }
+ ],
+ "search_seconds": 56.6,
+ "ppr": {
+  "position": 0.009452,
+  "goal": 0.15,
+  "line:Rxg7+|0|Rxg7+": 0.02224,
+  "piece:BP@g7": 0.009452,
+  "motif:check|Rxg7+|0": 0.012022,
+  "piece:BK@g8": 0.0,
+  "line:Rxg7+|1|Kf8": 0.028286,
+  "line:Rxg7+|2|Rg3": 0.033278,
+  "line:Rxg7+|3|cxb2": 0.078301,
+  "piece:WP@b2": 0.033278,
+  "line:Rxg7+|4|Rb1": 0.092119,
+  "line:Rxg7+|5|Bd6": 0.108375,
+  "outcome:Rxg7+": 0.1275,
+  "line:bxc3|0|bxc3": 0.0,
+  "piece:BP@c3": 0.0,
+  "line:bxc3|1|g6": 0.0,
+  "line:bxc3|2|h4": 0.0,
+  "line:bxc3|3|Nd7": 0.0,
+  "line:bxc3|4|h5": 0.0,
+  "motif:pinshield|bxc3|4|g6": 0.0,
+  "piece:BP@g6": 0.0,
+  "piece:WP@h5": 0.0,
+  "line:bxc3|5|Nxe5": 0.0,
+  "piece:WB@e5": 0.0,
+  "outcome:bxc3": 0.0,
+  "line:Rb1|0|Rb1": 0.0,
+  "line:Rb1|1|g6": 0.0,
+  "line:Rb1|2|bxc3": 0.0,
+  "line:Rb1|3|Bd6": 0.0,
+  "line:Rb1|4|Qe2": 0.0,
+  "line:Rb1|5|Bxe5": 0.0,
+  "outcome:Rb1": 0.0,
+  "line:h4|0|h4": 0.0,
+  "line:h4|1|cxb2": 0.0,
+  "line:h4|2|Rb1": 0.0,
+  "line:h4|3|Bd6": 0.0,
+  "line:h4|4|Rxb2": 0.0,
+  "piece:BP@b2": 0.0,
+  "line:h4|5|Rb8": 0.0,
+  "outcome:h4": 0.0,
+  "line:Qc2|0|Qc2": 0.0,
+  "line:Qc2|1|cxb2": 0.0,
+  "line:Qc2|2|Rb1": 0.0,
+  "line:Qc2|3|Rc8": 0.0,
+  "line:Qc2|4|Qxb2": 0.0,
+  "line:Qc2|5|Rc6": 0.0,
+  "outcome:Qc2": 0.0
+ },
+ "best_move": "Rxg7+",
+ "best_uci": "g3g7",
+ "check": {
+  "engine_move_named": true,
+  "motifs": [
+   "check"
+  ],
+  "themes": [
+   "attraction",
+   "crushing",
+   "kingsideAttack",
+   "long",
+   "middlegame",
+   "pin",
+   "sacrifice"
+  ],
+  "theme_hit": [],
+  "theme_missed": [
+   "attraction",
+   "kingsideAttack",
+   "pin",
+   "sacrifice"
+  ]
+ }
+}

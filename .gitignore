@@ -9,3 +9,4 @@ run_offline.json
 run_2Tl6d_run2.json
 run_2Tl6d_run3.json
 site/.vercel/
+.claude/

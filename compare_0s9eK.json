@@ -1,0 +1,234 @@
+{
+ "puzzle": {
+  "id": "0s9eK",
+  "fen": "r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17",
+  "rating": 2498,
+  "themes": [
+   "attraction",
+   "crushing",
+   "kingsideAttack",
+   "long",
+   "middlegame",
+   "pin",
+   "sacrifice"
+  ],
+  "solution": [
+   "Rxg7+",
+   "Kxg7",
+   "Qg4+",
+   "Kf8",
+   "Qg5"
+  ],
+  "plays": 3475,
+  "url": "https://lichess.org/ZdyjGrnQ/black#32"
+ },
+ "fen": "r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17",
+ "best_move": "Rxg7+",
+ "best_uci": "g3g7",
+ "model": "openai/gpt-4.1-mini",
+ "reps": 3,
+ "engine_lines": "1. Rxg7+ (+6.22): Rxg7+ Kf8 Rg3 cxb2 Rb1 Bd6\n2. bxc3 (+0.45): bxc3 g6 h4 Nd7 h5 Nxe5\n3. Rb1 (+0.08): Rb1 g6 bxc3 Bd6 Qe2 Bxe5\n4. h4 (+0.07): h4 cxb2 Rb1 Bd6 Rxb2 Rb8\n5. Qc2 (-0.03): Qc2 cxb2 Rb1 Rc8 Qxb2 Rc6",
+ "conditions": {
+  "0": {
+   "name": "Board only",
+   "saw": "the position only",
+   "runs": [
+    {
+     "text": "Move: Bxf6. White plays Bxf6 to remove the key defender of Black's kingside and open lines towards the Black king. If Black recaptures with gxf6, White can increase pressure on the weakened kingside pawn structure and exploit the open g-file with the rook on g3. Additionally, this move threatens to disrupt Black's coordination and create tactical opportunities, especially targeting the pinned knight on f6 and the weakened dark squares around Black's king.",
+     "in": 163,
+     "out": 105,
+     "score": {
+      "correct_move": false,
+      "themes_hit": [
+       "kingsideAttack",
+       "pin"
+      ],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [
+       "gxf6"
+      ],
+      "words": 72
+     }
+    }
+   ],
+   "calls_per_run": 1,
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. Find the best move and explain in 3-4 sentences why it works. Return JSON {\"move\": \"<SAN>\", \"explanation\": \"...\"}."
+  },
+  "1": {
+   "name": "Engine lines, no search",
+   "saw": "the position + Stockfish's top-5 lines and scores",
+   "runs": [
+    {
+     "text": "White's winning move is **Rxg7+**, a powerful sacrifice that exploits Black's vulnerable king position. By capturing on g7, White forces Black's king to move, breaking Black's coordination and exposing it to a deadly attack. After Black recaptures, White can bring the rook and other pieces into the attack quickly, creating threats that Black cannot parry effectively. This move works because it opens lines and disrupts Black's defenses, turning White's initiative into a decisive advantage.",
+     "in": 307,
+     "out": 100,
+     "seconds": 1.56,
+     "score": {
+      "correct_move": true,
+      "themes_hit": [
+       "sacrifice"
+      ],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [],
+      "words": 74
+     }
+    },
+    {
+     "text": "White's winning move is **Rxg7+**, a powerful sacrifice that exploits Black's vulnerable king position. By capturing on g7, White forces Black's king to move, breaking Black's coordination and exposing it to a deadly attack. After Black recaptures, White can bring the rook and other pieces into the attack quickly, creating threats that Black cannot parry. This move works because it opens lines and disrupts Black's defenses, turning White's initiative into a decisive advantage.",
+     "in": 307,
+     "out": 99,
+     "seconds": 1.39,
+     "score": {
+      "correct_move": true,
+      "themes_hit": [
+       "sacrifice"
+      ],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [],
+      "words": 73
+     }
+    },
+    {
+     "text": "White's winning move is **Rxg7+**, a powerful sacrifice that exploits Black's vulnerable king position. By capturing on g7, White forces Black's king to move and disrupts Black's coordination, allowing White to bring the rook and other pieces into an aggressive attack. After Black recaptures, White can quickly increase pressure with moves like Rg3, targeting weak pawns and squares around Black's king. This combination leads to a decisive material and positional advantage, turning the attack into a winning advantage.",
+     "in": 307,
+     "out": 105,
+     "seconds": 1.85,
+     "score": {
+      "correct_move": true,
+      "themes_hit": [
+       "sacrifice"
+      ],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [],
+      "words": 78
+     }
+    }
+   ],
+   "calls_per_run": 1,
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move.\n\nStockfish analysis (depth 18), top 5 moves with evaluation and expected line:\n1. Rxg7+ (+6.22): Rxg7+ Kf8 Rg3 cxb2 Rb1 Bd6\n2. bxc3 (+0.45): bxc3 g6 h4 Nd7 h5 Nxe5\n3. Rb1 (+0.08): Rb1 g6 bxc3 Bd6 Qe2 Bxe5\n4. h4 (+0.07): h4 cxb2 Rb1 Bd6 Rxb2 Rb8\n5. Qc2 (-0.03): Qc2 cxb2 Rb1 Rc8 Qxb2 Rc6\n\nWrite a 3-4 sentence explanation for a club player of White's winning move and why it works."
+  },
+  "2": {
+   "name": "All verified facts, no search",
+   "saw": "the position + the whole knowledge graph at once",
+   "runs": [
+    {
+     "text": "White's winning move is **Rxg7+**, a forcing check that disrupts Black's king safety. After Black responds with the best move **Kf8**, White plays **Rg3**, increasing pressure and threatening decisive attacks. Black's best attempts, like **cxb2** and **Bd6**, fail to neutralize White's initiative, leaving White with a decisive advantage (+6.22). This sequence works because it exploits Black's vulnerable king position and leads to overwhelming attacking chances.",
+     "in": 1125,
+     "out": 101,
+     "seconds": 1.55,
+     "score": {
+      "correct_move": true,
+      "themes_hit": [],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [],
+      "words": 65
+     }
+    },
+    {
+     "text": "White's winning move is **Rxg7+**, which delivers a check forcing Black's king to move to f8. This move sacrifices the rook temporarily but opens up Black's king position and leads to a strong attack. After Black's best reply Kf8 and White's follow-up Rg3, White gains a decisive advantage (+6.22 according to Stockfish), as Black's defenses collapse under pressure. The other candidate moves lead to much smaller advantages or even slight equality, making Rxg7+ the clear winning choice.",
+     "in": 1125,
+     "out": 109,
+     "seconds": 1.48,
+     "score": {
+      "correct_move": true,
+      "themes_hit": [
+       "sacrifice"
+      ],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [],
+      "words": 77
+     }
+    },
+    {
+     "text": "White's winning move is **Rxg7+**, which delivers a check forcing Black's king to move to f8. This move sacrifices the rook temporarily but opens up Black's king position and leads to a strong attack. After Black responds with Kf8, White plays Rg3, increasing pressure and eventually winning material with a decisive advantage (+6.22). Other candidate moves like bxc3 or Rb1 lead to much smaller advantages, so Rxg7+ is the clear winning choice.",
+     "in": 1125,
+     "out": 103,
+     "seconds": 1.45,
+     "score": {
+      "correct_move": true,
+      "themes_hit": [
+       "sacrifice"
+      ],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [],
+      "words": 72
+     }
+    }
+   ],
+   "calls_per_run": 1,
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move.\n\nVerified facts from a chess knowledge graph (every fact was checked with Stockfish or python-chess):\n- Position (White to move) --candidate--> Rxg7+\n- Position (White to move) --candidate--> bxc3\n- Position (White to move) --candidate--> Rb1\n- Position (White to move) --candidate--> h4\n- Position (White to move) --candidate--> Qc2\n- Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7)\n- Rxg7+ --best_reply--> Kf8 (reply)\n- Black pawn g7 --captured_by--> Rxg7+\n- Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --targets--> Black king g8\n- Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply)\n- Kf8 (reply) --then--> Rg3 (then)\n- Rg3 (then) --best_reply--> cxb2 (reply)\n- cxb2 (reply) --then--> Rb1 (then)\n- White pawn b2 --captured_by--> cxb2 (reply)\n- White pawn b2 --captured_by--> cxb2 (reply)\n- White pawn b2 --captured_by--> cxb2 (reply)\n- Rb1 (then) --best_reply--> Bd6 (reply)\n- Bd6 (reply) --results_in--> After Rxg7+: +6.22 (Stockfish d18)\n- After Rxg7+: +6.22 (Stockfish d18) --achieves--> Goal: decisive advantage (\u2265 +3 or forced mate)\n- bxc3 --best_reply--> g6 (reply)\n- Black pawn c3 --captured_by--> bxc3\n- Black pawn c3 --captured_by--> bxc3 (then)\n- g6 (reply) --then--> h4 (then)\n- h4 (then) --best_reply--> Nd7 (reply)\n- Nd7 (reply) --then--> h5 (then)\n- h5 (then) --exploits--> Pin: Black pawn g6 is pinned to its king, so it cannot take on h5\n- h5 (then) --best_reply--> Nxe5 (reply)\n- Pin: Black pawn g6 is pinned to its king, so it cannot take on h5 --targets--> Black pawn g6\n- Pin: Black pawn g6 is pinned to its king, so it cannot take on h5 --shields--> White pawn h5\n- Nxe5 (reply) --results_in--> After bxc3: +0.45 (Stockfish d18)\n- White bishop e5 --captured_by--> Nxe5 (reply)\n- White bishop e5 --captured_by--> Bxe5 (reply)\n- Rb1 --best_reply--> g6 (reply)\n- g6 (reply) --then--> bxc3 (then)\n- bxc3 (then) --best_reply--> Bd6 (reply)\n- Bd6 (reply) --then--> Qe2 (then)\n- Qe2 (then) --best_reply--> Bxe5 (reply)\n- Bxe5 (reply) --results_in--> After Rb1: +0.08 (Stockfish d18)\n- h4 --best_reply--> cxb2 (reply)\n- cxb2 (reply) --then--> Rb1 (then)\n- Rb1 (then) --best_reply--> Bd6 (reply)\n- Bd6 (reply) --then--> Rxb2 (then)\n- Rxb2 (then) --best_reply--> Rb8 (reply)\n- Black pawn b2 --captured_by--> Rxb2 (then)\n- Black pawn b2 --captured_by--> Qxb2 (then)\n- Rb8 (reply) --results_in--> After h4: +0.07 (Stockfish d18)\n- Qc2 --best_reply--> cxb2 (reply)\n- cxb2 (reply) --then--> Rb1 (then)\n- Rb1 (then) --best_reply--> Rc8 (reply)\n- Rc8 (reply) --then--> Qxb2 (then)\n- Qxb2 (then) --best_reply--> Rc6 (reply)\n- Rc6 (reply) --results_in--> After Qc2: -0.03 (Stockfish d18)\n\nUse ONLY these facts. Write a 3-4 sentence explanation for a club player of White's winning move and why it works."
+  },
+  "3": {
+   "name": "MCTS + LLM (ours)",
+   "saw": "only the chains of verified facts that the search accepted",
+   "runs": [
+    {
+     "text": "In this position, White's best candidate move is Rxg7+, which gives a check on the Black king and forces Black to respond. The best reply for Black is Kf8, after which White continues with Rg3, maintaining strong pressure. Black tries to counter with cxb2, but White follows up with Rb1, and after Black's Bd6, White achieves a decisive advantage with a Stockfish evaluation of +6.22. This sequence shows how the initial sacrifice Rxg7+ opens lines and exploits Black's weaknesses, leading to a winning position for White.",
+     "score": {
+      "correct_move": true,
+      "themes_hit": [
+       "sacrifice"
+      ],
+      "themes_total": [
+       "attraction",
+       "kingsideAttack",
+       "pin",
+       "sacrifice"
+      ],
+      "unverified_moves": [],
+      "words": 86
+     },
+     "in": 14201,
+     "out": 1099
+    }
+   ],
+   "calls_per_run": 46,
+   "prompt": "Chess position (FEN): r2qr1k1/4bppp/p3pn2/3pB3/3P4/2pB2RP/PP3PP1/R2Q2K1 w - - 0 17\nr . . q r . k .\n. . . . b p p p\np . . . p n . .\n. . . p B . . .\n. . . P . . . .\n. . p B . . R P\nP P . . . P P .\nR . . Q . . K .\nWhite to move. We are building an EXPLANATION, as a chain of facts in a chess knowledge graph, of how White reaches a decisive advantage. Nodes are moves, pieces and tactical motifs; edges are verified relations such as gives, creates, exploits, targets, answered_by, accepted_by, opens, captured_by.\n\nUse ONLY these verified facts from the knowledge graph:\n- Rxg7+ --best_reply--> Kf8 (reply)\n- Rxg7+ --gives--> Check on the Black king (legal answers: Kh8, Kf8, Kxg7)\n- Kf8 (reply) --then--> Rg3 (then)\n- Rg3 (then) --best_reply--> cxb2 (reply)\n- cxb2 (reply) --then--> Rb1 (then)\n- Rb1 (then) --best_reply--> Bd6 (reply)\n- Bd6 (reply) --results_in--> After Rxg7+: +6.22 (Stockfish d18)\n- Check on the Black king (legal answers: Kh8, Kf8, Kxg7) --answered_by--> Kf8 (reply)\n- After Rxg7+: +6.22 (Stockfish d18) --achieves--> Goal: decisive advantage (\u2265 +3 or forced mate)\n- Position (White to move) --candidate--> Rxg7+\n\nWrite a 3-4 sentence explanation for a club player of White's winning move and why it works. Do not add facts that are not listed.",
+   "accepted": 2,
+   "graph_motifs": [
+    "check"
+   ],
+   "seconds": 56.6
+  }
+ },
+ "graph": {
+  "nodes": 47,
+  "edges": 52,
+  "facts_tokens_estimate": 640
+ }
+}
