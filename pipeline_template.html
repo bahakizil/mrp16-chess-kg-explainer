@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chess KG Pipeline</title>
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js" integrity="sha384-yxKDWWf0wwdUj/gPeuL11czrnKFQROnLgY8ll7En9NYoXibgg3C6NK/UDHNtUgWJ" crossorigin="anonymous"></script>
+<style>
+  :root { --bg:#f4f6f5; --panel:#ffffff; --ink:#18252d; --muted:#5b6b73; --line:#d9e2de; --head:#13212b; --headink:#eef3f1;
+          --sf:#3b6ea5; --pc:#7a5ca8; --llm:#d9731f; --mcts:#0e7c70; --ok:#1f9d55; --bad:#c0392b; --chip:#eef3f1; --code:#f6f8f7; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+          --bg:#10171c; --panel:#18232a; --ink:#e3ebe8; --muted:#9db0aa; --line:#2b3a42; --head:#0a1014; --chip:#22303a; --code:#121b21; } }
+  :root[data-theme="dark"] { --bg:#10171c; --panel:#18232a; --ink:#e3ebe8; --muted:#9db0aa; --line:#2b3a42; --head:#0a1014; --chip:#22303a; --code:#121b21; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+  header { background:var(--head); color:var(--headink); padding:16px; }
+  header h1 { margin:0; font-size:22px; } header p { margin:4px 0 0; color:#a9c0ba; font-size:14px; }
+  nav a { color:#9fe0d4; font-size:13px; margin-right:12px; }
+  main { max-width:1100px; margin:0 auto; padding:16px; }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; margin:14px 0; }
+  h2 { margin:0 0 8px; font-size:19px; display:flex; align-items:center; gap:10px; }
+  h3 { margin:12px 0 6px; font-size:15px; }
+  .num { display:inline-flex; width:28px; height:28px; border-radius:50%; align-items:center; justify-content:center; color:#fff; font-size:14px; font-weight:700; flex:0 0 28px; }
+  .who { font-size:12px; font-weight:600; padding:2px 8px; border-radius:10px; color:#fff; }
+  .sf { background:var(--sf); } .pc { background:var(--pc); } .llm { background:var(--llm); } .mcts { background:var(--mcts); } .none { background:#8a9aa2; }
+  .muted { color:var(--muted); font-size:13px; }
+  .row { display:flex; gap:16px; flex-wrap:wrap; } .row > * { flex:1 1 300px; min-width:0; }
+  .io { display:grid; grid-template-columns:1fr; gap:8px; }
+  .box { border:1px solid var(--line); border-radius:8px; padding:10px; background:var(--code); font-size:13px; overflow-x:auto; }
+  .box > b:first-child, .box b.blk { display:block; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px; }
+  pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:ui-monospace,Menlo,monospace; font-size:12px; }
+  table { border-collapse:collapse; width:100%; font-size:13px; } th,td { text-align:left; padding:6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  .flow { display:flex; flex-wrap:wrap; gap:6px; align-items:stretch; }
+  .flow .step { flex:1 1 120px; border-radius:10px; padding:10px; color:#fff; font-size:13px; min-width:120px; }
+  .flow .arrow { align-self:center; color:var(--muted); font-size:20px; }
+  .board svg { max-width:100%; height:auto; }
+  .boards { display:flex; gap:10px; flex-wrap:wrap; }
+  .boards .b { flex:0 1 180px; font-size:12px; } .boards .b svg { width:100%; height:auto; }
+  .chip { display:inline-block; background:var(--chip); border-radius:10px; padding:1px 8px; margin:2px 4px 2px 0; font-size:12px; }
+  .chip.m { background:var(--llm); color:#fff; }
+  .ctrls { display:flex; gap:6px; flex-wrap:wrap; margin:8px 0; } .ctrls .sep { width:12px; }
+  .ctrls button { font-size:14px; padding:6px 12px; } .ctrls button.on { background:var(--mcts); color:#fff; border-color:var(--mcts); }
+  .legend { display:flex; flex-wrap:wrap; gap:12px; font-size:13px; margin:6px 0; } .legend span { display:inline-flex; align-items:center; gap:6px; }
+  .legend i { width:14px; height:14px; border-radius:50%; display:inline-block; }
+  #kg { height:620px; border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+  .strip { display:flex; flex-wrap:wrap; gap:2px; margin:8px 0; }
+  .strip div { width:14px; height:22px; border-radius:3px; cursor:pointer; border:2px solid transparent; }
+  .strip div.on { border-color:var(--ink); }
+  details { border:1px solid var(--line); border-radius:8px; padding:6px 10px; margin:6px 0; background:var(--code); }
+  summary { cursor:pointer; font-size:13px; font-weight:600; }
+  .phase { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; } .phase div { border:1px solid var(--line); border-radius:8px; padding:8px; font-size:13px; }
+  @media (max-width:700px) { .phase { grid-template-columns:1fr 1fr; } .flow .arrow { display:none; } }
+  .stat { font-size:26px; font-weight:700; } .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
+  .stats div { border:1px solid var(--line); border-radius:8px; padding:10px; }
+  .ok { color:var(--ok); font-weight:600; } .bad { color:var(--bad); font-weight:600; }
+  button { background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; }
+</style>
+</head>
+<body>
+<header>
+  <h1>How the chess knowledge-graph explainer works</h1>
+  <p>Step by step, with the real inputs and outputs of one logged run on a Lichess puzzle.</p>
+  <nav><a href="index.html">Example 1: constructed fork</a><a href="puzzle-2Tl6d.html">Example 2: puzzle 2Tl6d (results)</a><a href="pipeline.html">How it works (this page)</a></nav>
+</header>
+<main>
+
+<section>
+  <h2>What does this system do?</h2>
+  <p>LLMs often say wrong things when they explain chess moves; they can even propose moves that are not legal.
+  We make the LLM explain a move <b>only through facts that a chess engine and a rules library have verified</b>.
+  To decide <i>which</i> verified facts form a good explanation, the LLM guides a search over those facts.
+  This is the method of our supervisors' TESSERA paper (LLM-guided Monte Carlo tree search over a knowledge graph), moved from drugs and diseases to chess.</p>
+  <p><b>What we research:</b> do explanations built this way become more correct and more useful than explanations written by an LLM directly, or by an LLM that is just told the engine's answer?</p>
+  <div class="flow" id="flow"></div>
+  <h3>Who does what</h3>
+  <table>
+    <tr><th>Component</th><th>Role</th><th>Does it compute moves?</th><th>Calls in this run</th></tr>
+    <tr><td><span class="who sf">Stockfish 19</span></td><td>Chess engine (the "calculator"). It finds the best moves and scores them. Input and output are text, not images.</td><td>Yes</td><td>1 analysis</td></tr>
+    <tr><td><span class="who pc">python-chess</span></td><td>Rules library (the "rule checker"). It finds checks, forks, pins, sacrifices and hanging pieces.</td><td>No, it only checks facts</td><td>local code</td></tr>
+    <tr><td><span class="who mcts">MCTS</span></td><td>The search (the "organiser"). It tries many combinations of facts and keeps those that lead to the goal.</td><td>No</td><td id="simsCell"></td></tr>
+    <tr><td><span class="who llm">LLM</span></td><td>The "guide" (prior), "judge" (evaluator) and "writer" (final text). It never invents moves: it only chooses among verified facts.</td><td>No</td><td id="llmCell"></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num none">1</span> The puzzle: our answer key <span class="who none">Lichess</span></h2>
+  <div class="row">
+    <div class="board" id="board"></div>
+    <div id="puzzle"></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num sf">2</span> Stockfish: which moves win? <span class="who sf">Stockfish</span></h2>
+  <p class="muted">The position is sent as one line of text (FEN). Stockfish searches 18 moves deep and returns its 5 best moves, each with a score (from the side to move) and the line it expects.</p>
+  <div class="row">
+    <div class="box"><b>Sent to Stockfish</b><pre id="sfIn"></pre></div>
+    <div class="box"><b>Returned by Stockfish</b><div id="sfOut"></div></div>
+  </div>
+  <p class="muted">Only lines scoring at least +3.00 count as reaching the goal ("decisive advantage"). Here that is only the solution move.</p>
+</section>
+
+<section>
+  <h2><span class="num pc">3</span> python-chess: what happens on the board? <span class="who pc">python-chess</span></h2>
+  <p class="muted">After every move of every engine line, python-chess checks the board and records the motifs it finds. These are exact rules, not guesses. Below: the solution line.</p>
+  <div class="boards" id="boards"></div>
+  <details><summary>Motifs found in all 5 engine lines</summary><div id="allMotifs"></div></details>
+</section>
+
+<section>
+  <h2><span class="num mcts">4</span> The knowledge graph <span class="who none">built from steps 2 + 3</span></h2>
+  <p class="muted"><b>Search layer</b> (blue/purple): moves, replies, outcomes and the goal, from Stockfish. <b>Concept layer</b> (orange/brown): motifs and pieces, from python-chess.
+  Every edge is a verified fact. Node size = how close the node is to the goal (personalised PageRank), used to pick which neighbours the search considers. Green border = part of the final explanation.</p>
+  <div class="ctrls">
+    <button id="gExp" class="on">Only the explanation path</button>
+    <button id="gAll">Whole graph</button>
+    <span class="sep"></span>
+    <button id="gIn" title="Zoom in">＋ Zoom in</button>
+    <button id="gOut" title="Zoom out">－ Zoom out</button>
+    <button id="gFit" title="Fit to screen">⤢ Fit</button>
+  </div>
+  <div class="legend" id="gLegend"></div>
+  <div id="kg"></div>
+  <p class="muted" id="kgStats"></p>
+</section>
+
+<section>
+  <h2><span class="num llm">5</span> MCTS with the LLM: choosing what to say <span class="who mcts">MCTS</span> <span class="who llm">LLM</span></h2>
+  <div class="phase">
+    <div><b>1. Select</b><br>Pick the most promising path so far.</div>
+    <div><b>2. Expand</b> <span class="who llm">LLM prior</span><br>LLM scores the possible next facts (0–10).</div>
+    <div><b>3. Evaluate</b> <span class="who llm">LLM evaluator</span><br>LLM rates the chain (0–3). Goal = +1, dead end = −1.</div>
+    <div><b>4. Update</b><br>Add the score to every step of the path.</div>
+  </div>
+  <p class="muted">The LLM only gives scores; the MCTS formula decides where to search next.</p>
+  <div class="box" id="worked"></div>
+  <h3>Every simulation in this run</h3>
+  <p class="muted">One square = one simulation (green = good, red = bad). Click one to see what the LLM was asked and what it answered.</p>
+  <div class="strip" id="strip"></div>
+  <div><button id="prev">◀</button> <button id="next">▶</button> <span class="muted" id="simLabel"></span></div>
+  <div id="simDetail"></div>
+</section>
+
+<section>
+  <h2><span class="num llm">6</span> The explanation, and how it compares <span class="who llm">LLM writer</span></h2>
+  <div class="row">
+    <div>
+      <h3>Accepted chains (verified paths that reach the goal)</h3><div id="chains"></div>
+      <h3>Final explanation (written only from those facts)</h3><div class="box" id="expl"></div>
+      <details><summary>Prompt sent to the LLM</summary><pre id="explPrompt"></pre></details>
+    </div>
+    <div>
+      <h3>Baseline: same LLM, board only (no graph, no engine)</h3><div class="box" id="base"></div>
+      <details><summary>Prompt sent to the LLM</summary><pre id="basePrompt"></pre></details>
+      <h3>Check against the answer key</h3><div id="check"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num none">7</span> What it cost</h2>
+  <div class="stats" id="stats"></div>
+  <p class="muted">Model: <span id="model"></span>, temperature 0, via OpenRouter. The cost uses the model's list price (USD 0.40 / 1M input tokens, 1.60 / 1M output tokens). Stockfish runs locally and is free.</p>
+</section>
+
+<section>
+  <h2>Good to know</h2>
+  <ul style="margin:0 0 0 18px; padding:0">
+    <li>Stockfish and the LLM get the position as text, never as an image.</li>
+    <li>This page is not live: it shows the recorded inputs and outputs of one run. Results can vary between runs.</li>
+    <li>In the planned version, the LLM must find the move itself; Stockfish only verifies.</li>
+  </ul>
+</section>
+</main>
+
+<script>
+/*DATA*/
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const lab = n => (D.nodes[n] || {label:n}).label;
+// flow
+const F = [["Lichess puzzle","none","answer key"],["Stockfish","sf","best moves + scores"],["python-chess","pc","checks, forks, pins…"],["Knowledge graph","mcts","verified facts"],["MCTS + LLM","llm","choose the facts"],["Explanation","llm","text from facts only"],["Check","none","vs answer key"]];
+document.getElementById("flow").innerHTML = F.map((f,i)=>`<div class="step ${f[1]}"><b>${i+1}. ${f[0]}</b><br>${f[2]}</div>` + (i<F.length-1?'<div class="arrow">→</div>':'')).join("");
+const C = D.calls, total = Object.values(C).reduce((a,b)=>a+b,0);
+document.getElementById("simsCell").textContent = `${D.T} simulations`;
+document.getElementById("llmCell").textContent = `${total} calls (prior ${C.prior}, evaluator ${C.eval}, writer ${C.explain}, baseline ${C.baseline||0})`;
+// 1 puzzle
+document.getElementById("board").innerHTML = D.board_svg;
+const P = D.puzzle;
+document.getElementById("puzzle").innerHTML = `<table><tr><th>Puzzle</th><td><a href="https://lichess.org/training/${P.id}" target="_blank">${P.id}</a>, rated <b>${P.rating}</b>, played ${P.plays} times</td></tr>
+<tr><th>To move</th><td>${D.fen.split(" ")[1]==="w"?"White":"Black"}</td></tr><tr><th>Solution</th><td><b>${P.solution.join(" ")}</b></td></tr>
+<tr><th>Lichess themes</th><td>${P.themes.map(t=>`<span class="chip">${t}</span>`).join("")}</td></tr>
+<tr><th>FEN</th><td><code>${esc(D.fen)}</code></td></tr></table><p class="muted">This is the "answer key". The search never sees it; we only use it at the end to check the result.</p>`;
+// 2 stockfish
+document.getElementById("sfIn").textContent = `position fen ${D.fen}\ngo depth 18  (MultiPV = 5)`;
+document.getElementById("sfOut").innerHTML = `<table><tr><th>#</th><th>Move</th><th>Score</th><th>Expected line</th></tr>` +
+  D.lines.map((l,i)=>`<tr><td>${i+1}</td><td><b>${l.cand}</b></td><td class="${l.score.startsWith('+')||l.score.startsWith('mate in')?'ok':'bad'}">${l.score}</td><td>${l.plies.map(p=>p.san).join(" ")}</td></tr>`).join("") + `</table>`;
+// 3 python-chess
+document.getElementById("boards").innerHTML = D.sol_boards.map(b=>`<div class="b">${b.svg}<div><b>${b.side}: ${esc(b.san)}</b></div><div>${b.motifs.length?b.motifs.map(m=>`<span class="chip m">${esc(m)}</span>`).join(""):'<span class="muted">no motif detected</span>'}</div></div>`).join("");
+document.getElementById("allMotifs").innerHTML = D.lines.map(l=>`<h3>${l.cand} (${l.score})</h3>` + l.plies.map(p=>`<div>${p.side} <b>${esc(p.san)}</b>: ${p.motifs.length?p.motifs.map(m=>`<span class="chip m">${esc(m)}</span>`).join(""):'<span class="muted">–</span>'}</div>`).join("")).join("");
+// 4 graph
+const COL = {position:"#64748b", goal:"#16a34a", move:"#2563eb", reply:"#9333ea", outcome:"#0891b2", piece:"#ca8a04", motif:"#ea580c"};
+const KNAME = {position:"Position", move:"Our move (search layer)", reply:"Opponent reply (search layer)", outcome:"Engine outcome (search layer)", goal:"Goal", motif:"Motif / concept (concept layer)", piece:"Piece (concept layer)"};
+document.getElementById("gLegend").innerHTML = Object.keys(COL).map(k=>`<span><i style="background:${COL[k]}"></i>${KNAME[k]}</span>`).join("") + `<span><i style="background:transparent;border:3px solid #16a34a"></i>part of the final explanation</span>`;
+const sub = new Set(D.sub_nodes), subE = new Set(D.sub_edges.map(e=>e[0]+"|"+e[1]));
+const pmax = Math.max(...Object.values(D.ppr));
+const css = getComputedStyle(document.documentElement);
+const INK = css.getPropertyValue("--ink").trim() || "#18252d", BG = css.getPropertyValue("--panel").trim() || "#fff";
+let net = null;
+function drawGraph(onlyExp){
+  const keep = id => !onlyExp || sub.has(id);
+  const gn = Object.entries(D.nodes).filter(([id])=>keep(id)).map(([id,d])=>({id,
+    label: onlyExp ? d.label : (d.label.length>22?d.label.slice(0,20)+"…":d.label), title:d.label,
+    shape: onlyExp ? "box" : "dot", size: 8 + 28*Math.sqrt((D.ppr[id]||0)/pmax),
+    color:{background:COL[d.kind], border: sub.has(id)?"#16a34a":COL[d.kind], highlight:{background:COL[d.kind], border:INK}},
+    borderWidth: sub.has(id)?4:1, margin:10,
+    font: onlyExp ? {color:"#ffffff", size:18, face:"Helvetica"} : {color:INK, size:13, strokeWidth:4, strokeColor:BG}, widthConstraint: onlyExp?{maximum:140}:undefined}));
+  const ge = D.edges.filter(e=>keep(e[0]) && keep(e[1]) && (!onlyExp || subE.has(e[0]+"|"+e[1]))).map(e=>({from:e[0], to:e[1], arrows:"to", title:e[2],
+    label: onlyExp ? e[2] : undefined, font:{color:INK, size:13, strokeWidth:4, strokeColor:BG, align:"middle"},
+    color:{color: subE.has(e[0]+"|"+e[1])?"#16a34a":"#94a3b8"}, width: subE.has(e[0]+"|"+e[1])?3:1}));
+  const opts = onlyExp
+    ? {layout:{hierarchical:{direction:"LR", sortMethod:"directed", levelSeparation:165, nodeSpacing:110}}, physics:false, interaction:{hover:true, navigationButtons:false, keyboard:true}}
+    : {physics:{stabilization:{iterations:300}, barnesHut:{springLength:140}}, interaction:{hover:true, keyboard:true}};
+  if (net) net.destroy();
+  net = new vis.Network(document.getElementById("kg"), {nodes:gn, edges:ge}, opts);
+  net.once("afterDrawing", ()=>net.fit({animation:false}));
+  document.getElementById("gExp").classList.toggle("on", onlyExp); document.getElementById("gAll").classList.toggle("on", !onlyExp);
+}
+const zoom = f => net.moveTo({scale: net.getScale()*f, animation:{duration:250}});
+document.getElementById("gExp").onclick = () => drawGraph(true);
+document.getElementById("gAll").onclick = () => drawGraph(false);
+document.getElementById("gIn").onclick = () => zoom(1.3);
+document.getElementById("gOut").onclick = () => zoom(1/1.3);
+document.getElementById("gFit").onclick = () => net.fit({animation:{duration:300}});
+drawGraph(true);
+const kinds = {}; Object.values(D.nodes).forEach(d=>kinds[d.kind]=(kinds[d.kind]||0)+1);
+document.getElementById("kgStats").textContent = `${Object.keys(D.nodes).length} nodes, ${D.edges.length} edges: ` + Object.entries(kinds).map(([k,v])=>`${v} ${k}`).join(", ") + ". In the whole-graph view, labels appear when you zoom in (＋ button); hover or tap a node to read it.";
+// 5 MCTS replay with LLM calls
+const byS = {}; D.llm_log.forEach(c=>{ (byS[c.sim] = byS[c.sim] || []).push(c); });
+const acc = new Set(D.accepted.map(p=>p.join(" > ")));
+const chain = p => p.map(lab).join(" → ");
+const strip = document.getElementById("strip");
+strip.innerHTML = D.events.map(e=>{ const v=e.value, g = v>0 ? `rgba(31,157,85,${0.25+0.75*v})` : `rgba(192,57,43,${0.25+0.75*(-v)})`;
+  return `<div data-s="${e.sim}" title="simulation ${e.sim}: value ${v}" style="background:${g};${e.accepted?'outline:2px solid #1f9d55;':''}"></div>`; }).join("");
+let curS = 1;
+function showSim(s){ curS = s; strip.querySelectorAll("div").forEach(d=>d.classList.toggle("on", +d.dataset.s===s));
+  const e = D.events[s-1]; document.getElementById("simLabel").textContent = `simulation ${s} / ${D.events.length}`;
+  const calls = byS[s] || [];
+  let h = `<div class="box"><b>Selected path</b>${esc(chain(e.selected))}<b class="blk" style="margin-top:8px">Value backed up</b>${e.value}${e.accepted?' <span class="ok">→ reached the goal, path accepted</span>':''}</div>`;
+  if (e.expanded) h += `<div class="box"><b>Expanded children (prior from the LLM)</b>${e.expanded.map(x=>`${esc(lab(x[0]))} <span class="muted">(${x[1]})</span>`).join("<br>")}</div>`;
+  if (!calls.length) h += `<p class="muted">No LLM call in this simulation (goal reached, dead end, single candidate, or a finished branch).</p>`;
+  calls.forEach(c=>{ h += `<details${calls.length===1?' open':''}><summary><span class="who llm">${c.kind==='prior'?'LLM prior':'LLM evaluator'}</span> ${c.in_tokens} in / ${c.out_tokens} out tokens, ${c.seconds}s</summary>
+     <div class="row"><div class="box"><b>Sent</b><pre>${esc(c.prompt)}</pre></div><div class="box"><b>Received</b><pre>${esc(c.response)}</pre></div></div></details>`; });
+  document.getElementById("simDetail").innerHTML = h; }
+strip.onclick = ev => { const s = ev.target.dataset && ev.target.dataset.s; if (s) showSim(+s); };
+document.getElementById("prev").onclick = () => showSim(Math.max(1, curS-1));
+document.getElementById("next").onclick = () => showSim(Math.min(D.events.length, curS+1));
+showSim(1);
+// worked example of one prior call
+(function(){
+  const ev = D.events.find(e => e.expanded && e.expanded.length >= 3 && (byS[e.sim]||[]).some(c=>c.kind==="prior"));
+  if (!ev) return;
+  const call = byS[ev.sim].find(c=>c.kind==="prior"); let sc = {};
+  try { sc = JSON.parse(call.response).scores || {}; } catch(e) {}
+  const rows = ev.expanded.map((x,i)=>`<tr><td>${i}</td><td>${esc(lab(x[0]))}</td><td>${sc[String(i)] ?? "?"}</td><td>${x[1]}</td></tr>`).join("");
+  document.getElementById("worked").innerHTML = `<b>Example of one LLM prior call (simulation ${ev.sim})</b>
+   <table style="margin-top:6px"><tr><th>#</th><th>Possible next fact</th><th>LLM score (0–10)</th><th>Prior (probability)</th></tr>${rows}</table>`;
+})();
+// 6 explanation
+document.getElementById("chains").innerHTML = D.accepted.map(p=>`<div class="box" style="margin-bottom:6px">${esc(chain(p))}</div>`).join("");
+document.getElementById("expl").textContent = D.explanation;
+const ex = D.llm_log.find(c=>c.kind==="explain"), bl = D.llm_log.find(c=>c.kind==="baseline");
+document.getElementById("explPrompt").textContent = ex ? ex.prompt : "";
+document.getElementById("basePrompt").textContent = bl ? bl.prompt : "";
+const B = D.baseline;
+document.getElementById("base").innerHTML = `Proposed move: <b class="bad">${esc(B.move)}</b> ${B.legal?'(legal, but wrong)':'<span class="bad">(not a legal move in this position)</span>'}<br><span class="muted">${esc(B.explanation)}</span>`;
+const K = D.check;
+document.getElementById("check").innerHTML = `<table><tr><th></th><th>Our search</th><th>Board-only LLM</th></tr>
+<tr><td>Correct move (${D.best_move})</td><td class="${K.engine_move_named?'ok':'bad'}">${K.engine_move_named?'✅ yes':'❌ no'}</td><td class="${B.correct?'ok':'bad'}">${B.correct?'✅ yes':'❌ no'}</td></tr>
+<tr><td>Legal move</td><td class="ok">✅ yes (verified graph)</td><td class="${B.legal?'ok':'bad'}">${B.legal?'✅ yes':'❌ no'}</td></tr>
+<tr><td>Lichess themes found</td><td>${(K.theme_hit||[]).join(", ")||'<span class="bad">none</span>'}${(K.theme_missed||[]).length?` <span class="muted">(missed: ${K.theme_missed.join(", ")})</span>`:''}</td><td class="muted">not checked</td></tr></table>`;
+// 7 cost
+document.getElementById("stats").innerHTML = [[total,"LLM calls"],[C.prior,"prior calls"],[C.eval,"evaluator calls"],[D.tokens_in.toLocaleString(),"input tokens"],[D.tokens_out.toLocaleString(),"output tokens"],["$"+D.cost_usd,"estimated cost"],[Math.round(D.seconds)+" s","search time"],["1","Stockfish analysis"]]
+  .map(x=>`<div><div class="stat">${x[0]}</div><div class="muted">${x[1]}</div></div>`).join("");
+document.getElementById("model").textContent = D.model;
+</script>
+</body>
+</html>

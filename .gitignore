@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+.DS_Store
+# build copies (the published pages live in site/)
+chess_kg_demo_*.html
+# superseded runs (earlier graph versions)
+run_offline.json
+run_2Tl6d_run2.json
+run_2Tl6d_run3.json
+site/.vercel/

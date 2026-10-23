@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chess KG search demo</title>
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js" integrity="sha384-yxKDWWf0wwdUj/gPeuL11czrnKFQROnLgY8ll7En9NYoXibgg3C6NK/UDHNtUgWJ" crossorigin="anonymous"></script>
+<style>
+  :root { --bg:#f5f7f6; --panel:#ffffff; --ink:#1b2a33; --muted:#5b6b73; --line:#d6e0dc; --teal:#0e7c70;
+          --orange:#d9731f; --green:#1f9d55; --red:#c0392b; --head:#13212b; --headink:#eef3f1; --tab:#e8eeec; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+          --bg:#11181d; --panel:#1a242b; --ink:#e3ebe8; --muted:#9db0aa; --line:#2c3a42; --head:#0b1115; --tab:#222e35; } }
+  :root[data-theme="dark"] { --bg:#11181d; --panel:#1a242b; --ink:#e3ebe8; --muted:#9db0aa; --line:#2c3a42; --head:#0b1115; --tab:#222e35; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:12px 16px; background:var(--head); color:var(--headink); }
+  header h1 { margin:0; font-size:19px; } header p { margin:4px 0 0; font-size:13px; color:#a9c0ba; }
+  .tabs { display:flex; gap:6px; padding:10px 16px 0; flex-wrap:wrap; }
+  .tab { padding:8px 12px; border:1px solid var(--line); border-bottom:none; border-radius:8px 8px 0 0; background:var(--tab); cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--panel); font-weight:600; }
+  .view { display:none; padding:0 16px 16px; gap:12px; }
+  .view.on { display:flex; flex-wrap:wrap; }
+  .canvas { flex:1 1 520px; min-width:0; height:calc(100vh - 150px); min-height:420px; background:var(--panel); border:1px solid var(--line); border-radius:0 8px 8px 8px; }
+  .side { flex:0 1 380px; min-width:0; display:flex; flex-direction:column; gap:10px; max-height:calc(100vh - 150px); overflow:auto; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:13px; line-height:1.45; }
+  .card h3 { margin:0 0 6px; font-size:14px; }
+  .muted { color:var(--muted); font-size:12px; }
+  .chain { font-size:12px; padding:4px 0; border-bottom:1px dashed var(--line); }
+  .rel { color:var(--orange); font-weight:600; }
+  .legend span { display:inline-flex; align-items:center; gap:4px; margin:0 10px 4px 0; font-size:12px; }
+  .dot { width:11px; height:11px; border-radius:50%; display:inline-block; }
+  button { border:1px solid var(--line); background:var(--panel); color:var(--ink); border-radius:6px; padding:5px 10px; cursor:pointer; font-size:13px; }
+  input[type=range] { width:100%; }
+  table { border-collapse:collapse; width:100%; font-size:12px; } td,th { border-bottom:1px solid var(--line); padding:3px 4px; text-align:left; vertical-align:top; }
+  .ok { color:var(--green); font-weight:600; } .bad { color:var(--red); font-weight:600; }
+  .board svg { max-width:100%; height:auto; }
+  @media (max-width:700px) { .canvas { height:60vh; } .side { max-height:none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Chess knowledge graph + TESSERA-style search (demo)</h1>
+  <nav style="margin-top:6px;font-size:13px"><a href="index.html" style="color:#9fe0d4">Example 1: constructed fork</a> · <a href="puzzle-2Tl6d.html" style="color:#9fe0d4">Example 2: Lichess puzzle 2Tl6d (rated 2496)</a> · <a href="pipeline.html" style="color:#9fe0d4"><b>How it works: step-by-step pipeline</b></a></nav>
+  <p id="sub"></p>
+</header>
+<div class="tabs">
+  <div class="tab on" data-v="v1">1 · Knowledge graph &amp; explanation</div>
+  <div class="tab" data-v="v2">2 · MCTS search replay</div>
+</div>
+
+<div class="view on" id="v1">
+  <div id="kg" class="canvas"></div>
+  <div class="side">
+    <div class="card board" id="board"></div>
+    <div class="card"><h3>Legend</h3><div class="legend" id="legend"></div>
+      <label class="muted"><input type="checkbox" id="onlyExp" checked> show only the explanation subgraph</label></div>
+    <div class="card"><h3>Explanation (LLM, from verified KG facts only)</h3><div id="expl"></div></div>
+    <div class="card"><h3>Accepted chains (union = explanation subgraph)</h3><div id="chains"></div></div>
+    <div class="card"><h3>Check against ground truth</h3><div id="check"></div></div>
+    <div class="card" id="puzzleCard" style="display:none"><h3>Lichess puzzle</h3><div id="puzzle"></div></div>
+    <div class="card" id="baseCard" style="display:none"><h3>Baseline: same LLM, FEN only (no KG, no engine)</h3><div id="base"></div></div>
+    <div class="card"><h3>How this maps to TESSERA</h3>
+      <table><tr><th>TESSERA (drug → disease)</th><th>Here (position → win)</th></tr>
+      <tr><td>Biomedical KG (drugs, proteins, processes)</td><td>Position KG: pieces, motifs, moves; relations from python-chess</td></tr>
+      <tr><td>Start = drug, target = disease</td><td>Start = position, target = "decisive advantage" (engine-labelled)</td></tr>
+      <tr><td>PPR top-k candidate edges</td><td>PPR toward the goal, top-8 per state</td></tr>
+      <tr><td>LLM prior + LLM evaluator, PUCT</td><td>Same (gpt-4.1-mini)</td></tr>
+      <tr><td>Union of paths = mechanism</td><td>Union of chains = explanation</td></tr>
+      <tr><td>Ground truth: DrugMechDB</td><td>Engine move + Lichess-style theme tags</td></tr></table></div>
+  </div>
+</div>
+
+<div class="view" id="v2">
+  <div id="tree" class="canvas"></div>
+  <div class="side">
+    <div class="card"><h3>Simulation <span id="simNo">0</span> / <span id="simMax"></span></h3>
+      <input type="range" id="slider" min="0" value="0">
+      <div style="display:flex;gap:6px;margin-top:6px"><button id="prev">◀</button><button id="next">▶</button><button id="play">Play</button><button id="end">End</button></div>
+      <p class="muted">Orange = path selected by PUCT in this simulation. Green = chain that reached the goal (accepted). Node label shows visits N and mean value Q.</p></div>
+    <div class="card"><h3>This simulation</h3><div id="simInfo" class="muted"></div></div>
+  </div>
+</div>
+
+<script>
+/*DATA*/
+const COL = {position:"#13212b", goal:"#1f9d55", move:"#3b6ea5", reply:"#7a5ca8", outcome:"#8a9aa2", piece:"#b08a3e", motif:"#d9731f"};
+const NAMES = {position:"Position", goal:"Goal", move:"Our move", reply:"Opponent reply", outcome:"Outcome (engine)", piece:"Piece", motif:"Motif / concept"};
+document.getElementById("sub").textContent = `FEN ${RUN.fen} · ${RUN.model} · ${RUN.T} simulations · LLM calls: prior ${RUN.calls.prior}, eval ${RUN.calls.eval}, explanation ${RUN.calls.explain}${RUN.calls.baseline?", baseline "+RUN.calls.baseline:""}`;
+document.getElementById("board").innerHTML = RUN.board_svg + `<div class="muted">${RUN.fen.split(" ")[1]==="w"?"White":"Black"} to move. Engine line: ${RUN.engine.map(e=>`${e[1]} (${e[0]>0?"+":""}${e[0]})`).join(", ")}</div>`;
+document.getElementById("legend").innerHTML = Object.keys(COL).map(k=>`<span><i class="dot" style="background:${COL[k]}"></i>${NAMES[k]}</span>`).join("");
+document.getElementById("expl").textContent = RUN.explanation || "(offline run: no LLM explanation)";
+const lab = n => RUN.nodes[n].label;
+document.getElementById("chains").innerHTML = RUN.accepted.map(p => '<div class="chain">' + p.map((n,i)=> i? `<span class="rel"> ${relOf(p[i-1],n)} → </span>${lab(n)}` : lab(n)).join("") + "</div>").join("");
+function relOf(a,b){ const e = RUN.edges.find(x=>x[0]===a&&x[1]===b); return e? e[2] : "?"; }
+const ck = RUN.check;
+const hit = Array.isArray(ck.theme_hit) ? ck.theme_hit : (ck.theme_hit ? ck.themes : []);
+document.getElementById("check").innerHTML = `Engine best move <b>${RUN.best_move}</b> appears in explanation: <span class="${ck.engine_move_named?'ok':'bad'}">${ck.engine_move_named}</span><br>
+ Motifs found: <b>${ck.motifs.join(", ")}</b><br>Lichess / expected themes: <b>${ck.themes.join(", ")}</b><br>
+ Matched: <span class="ok">${hit.join(", ")||"none"}</span>` + ((ck.theme_missed||[]).length? ` · Missed: <span class="bad">${ck.theme_missed.join(", ")}</span> (a concept our detectors do not capture yet)` : "");
+if (RUN.puzzle) { document.getElementById("puzzleCard").style.display="block";
+  document.getElementById("puzzle").innerHTML = `ID <a href="https://lichess.org/training/${RUN.puzzle.id}" target="_blank">${RUN.puzzle.id}</a> · rating <b>${RUN.puzzle.rating}</b> · played ${RUN.puzzle.plays} times<br>Solution: <b>${RUN.puzzle.solution.join(" ")}</b><br>Themes: ${RUN.puzzle.themes.join(", ")}`; }
+if (RUN.baseline && RUN.baseline.move) { document.getElementById("baseCard").style.display="block";
+  document.getElementById("base").innerHTML = `Move: <b class="${RUN.baseline.correct?'ok':'bad'}">${RUN.baseline.move}</b> (${RUN.baseline.correct?'correct':'wrong: the solution is '+RUN.best_move})<br><span class="muted">${RUN.baseline.explanation}</span>`; }
+
+const sub = new Set(RUN.sub_nodes), subE = new Set(RUN.sub_edges.map(e=>e[0]+"|"+e[1]));
+function drawKG(only){
+  const nodes = Object.entries(RUN.nodes).filter(([id])=>!only||sub.has(id)).map(([id,d])=>({id,label:only?d.label:(d.label.length>34?d.label.slice(0,32)+"…":d.label),title:d.label,
+      color:{background:COL[d.kind],border:sub.has(id)?"#111":COL[d.kind]},opacity:sub.has(id)?1:0.25,font:{color:"#fff",size:only?20:13},shape:"box",margin:8,widthConstraint:only?{maximum:220}:undefined,borderWidth:sub.has(id)?3:1}));
+  const edges = RUN.edges.filter(e=>!only||subE.has(e[0]+"|"+e[1])).map(e=>({from:e[0],to:e[1],label:e[2],arrows:"to",font:{size:only?16:11,align:"middle"},
+      color:{color:subE.has(e[0]+"|"+e[1])?"#d9731f":"#c8d2ce"},width:subE.has(e[0]+"|"+e[1])?2.5:1}));
+  new vis.Network(document.getElementById("kg"),{nodes,edges},{layout:only?{hierarchical:{direction:"LR",sortMethod:"directed",levelSeparation:260,nodeSpacing:150}}:{improvedLayout:false},
+      physics:only?false:{stabilization:{iterations:200}}});
+}
+drawKG(true);
+document.getElementById("onlyExp").onchange = e => drawKG(e.target.checked);
+
+// --- MCTS replay
+const T = RUN.events.length, slider = document.getElementById("slider");
+slider.max = T; document.getElementById("simMax").textContent = T;
+const acc = new Set(RUN.accepted.map(p=>p.join(" > ")));
+const tnodes = new vis.DataSet(), tedges = new vis.DataSet();
+const net = new vis.Network(document.getElementById("tree"),{nodes:tnodes,edges:tedges},{layout:{hierarchical:{direction:"UD",sortMethod:"directed",levelSeparation:90,nodeSpacing:120}},physics:false});
+function showSim(s){
+  document.getElementById("simNo").textContent = s; slider.value = s;
+  const ev = RUN.events[s-1], sel = ev? ev.selected.join(" > ") : "";
+  const all = [{id:"position",parent:null,node:"position",n:0,q:null,created:0}].concat(RUN.tree).filter(t=>t.created<=s);
+  tnodes.clear(); tedges.clear();
+  tnodes.add(all.map(t=>{ const d = RUN.nodes[t.node]; const onSel = sel && (sel===t.id || sel.startsWith(t.id+" > "));
+      return {id:t.id,label:(d.label.length>22?d.label.slice(0,20)+"…":d.label)+(t.n?`\nN=${t.n} Q=${t.q}`:""),title:d.label,shape:"box",
+      color:{background:acc.has(t.id)?"#1f9d55":COL[d.kind],border:onSel?"#d9731f":"#333"},borderWidth:onSel?4:1,font:{color:"#fff",size:11}}; }));
+  tedges.add(all.filter(t=>t.parent).map(t=>({from:t.parent,to:t.id,arrows:"to"})));
+  document.getElementById("simInfo").innerHTML = ev ? `<b>Selected:</b> ${ev.selected.map(lab).join(" → ")}<br><b>Value:</b> ${ev.value}` +
+     (ev.expanded? `<br><b>Expanded (prior):</b><br>`+ev.expanded.map(x=>`${lab(x[0])} (${x[1]})`).join("<br>") : "") +
+     (ev.accepted? `<br><b class="ok">Reached goal</b>` : "") : "Start";
+}
+slider.oninput = e => showSim(+e.target.value);
+document.getElementById("prev").onclick = () => showSim(Math.max(0,+slider.value-1));
+document.getElementById("next").onclick = () => showSim(Math.min(T,+slider.value+1));
+document.getElementById("end").onclick = () => showSim(T);
+let timer=null; document.getElementById("play").onclick = () => { if(timer){clearInterval(timer);timer=null;return;}
+  timer=setInterval(()=>{ if(+slider.value>=T){clearInterval(timer);timer=null;return;} showSim(+slider.value+1); },400); };
+document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
+  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===t));
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("on",v.id===t.dataset.v));
+  if (t.dataset.v==="v2") { showSim(+slider.value||T); net.fit(); }
+});
+showSim(T);
+</script>
+</body>
+</html>
